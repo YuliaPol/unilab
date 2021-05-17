@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet">
+    <link href="./css/style1.css" rel="stylesheet">
+    <link href="./css/my-styles.css" rel="stylesheet">
+    <link href="./css/image-uploader.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/my-styles.css" rel="stylesheet">
+    <link href="./css/timeTo.css" rel="stylesheet">
+    <link href="./css/menu-style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="navbar-aside">
+                <button type="button" class="btn-aside-menu toggle-sidebar">
+                </button>
+            </div>
+            <div class="navbar-user">
+                <div class="user">
+                    <div class="user-wrapper show-user-dropdown">
+                        <div class="icon-user"></div>
+                        <div class="user-name">admin</div>
+                    </div>
+                    <div class="dropdown-user">
+                        <ul>
+                            <li>
+                                <a class="logout " href="/admin/site/logout" data-method="post"><span
+                                        class="ti-power-off pr-2"></span> Выход </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="sidebar">
+            <div class="menu-sidebar">
+                <div class="logo">
+                    <a href="/admin">
+                        <img src="./img/logo.png" alt="Subways">
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul class="sidebar-nav treeview-menu">
+                            <li>
+                                <a href="./index.html">
+                                    <i class="fa fa-th"></i>
+                                    Ключевые показатели
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/review">
+                                    <i class="fa fa-star-half-o"></i>
+                                    Отзывы
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/branches">
+                                    <i class="fa fa-home"></i>
+                                    Мои компании
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/source-type">
+                                    <i class="fa fa-folder-open"></i>
+                                    Источники
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/user">
+                                    <i class="fa fa-users"></i>
+                                    Пользователи
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/import">
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                    Импорт отзывов
+                                </a>
+                            </li>
+                        </ul>
+
+
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="content">
+
+
+            <script src="https://www.amcharts.com/lib/4/core.js"></script>
+            <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+            <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+            <div class="breadcrumps">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th"></i> Ключевые показатели</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page-content">
+
+
+
+
+                <form id="selector-filter" action="/admin/dashboard" method="get" data-pjax="1">
+                    <div class="filter-wrapper">
+
+                        <!-- блок выбора расположения -->
+                        <div class="box">
+                            <h6>Франчайзи </h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-franchisee"
+                                    name="ReviewSearch[id_franchisee]" data-attribute="franchisee">
+                                    <option value="">Все</option>
+                                    <option value="6">Антропов Александр</option>
+                                    <option value="10">Земцова Ольга</option>
+                                    <option value="17">Андрианов Павел / Гургов Юрий</option>
+                                    <option value="20">Ишутин Александр</option>
+                                    <option value="23">Мамедов Анар</option>
+                                    <option value="25">Дубинин Алексей</option>
+                                    <option value="28">Назаренко Федор</option>
+                                    <option value="31">Литвиненко Валентин</option>
+                                    <option value="33">Штутман Евгения</option>
+                                    <option value="36">Эндлин Паулиус</option>
+                                    <option value="38">Кузнецов Игорь</option>
+                                    <option value="39">Колобаев Кирилл</option>
+                                    <option value="41">Хмелинина Лидия</option>
+                                    <option value="43">Савостьянов Александр</option>
+                                    <option value="45">Романовская Анастасия</option>
+                                    <option value="47">Сергеева Ольга</option>
+                                    <option value="49">Якушин Дмитрий</option>
+                                    <option value="51">Шкурова Надежда</option>
+                                    <option value="53">Назаренко Наталия</option>
+                                    <option value="55">Янайт Мария</option>
+                                    <option value="57">Ашкашидзе Адам</option>
+                                    <option value="59">Иманилов Гарри</option>
+                                    <option value="61">Громов Борис</option>
+                                    <option value="66">Осепян Виктория</option>
+                                    <option value="71">Мокренко Сергей</option>
+                                    <option value="73">Лурье Константин</option>
+                                    <option value="75">Николай Родичев</option>
+                                    <option value="79">Манин Станислав</option>
+                                    <option value="81">Сухарев Николай</option>
+                                    <option value="83">Адигезалов Роман</option>
+                                    <option value="85">Левин Сергей</option>
+                                    <option value="90">Токарев Андрей</option>
+                                    <option value="94">Мурадьян Максим</option>
+                                    <option value="95">Дышкант Олег</option>
+                                    <option value="97">Вдовикина Екатерина</option>
+                                    <option value="99">Лисникова Елена</option>
+                                    <option value="101">Князев Сергей</option>
+                                    <option value="103">Сердюков Леонид</option>
+                                    <option value="106">Иванишина Анастасия</option>
+                                    <option value="108">Талалаев Виктор</option>
+                                    <option value="109">Высоцкий Роман</option>
+                                    <option value="111">Ким Лолита</option>
+                                    <option value="114">Харчиков Семен</option>
+                                    <option value="116">Климова Зоя</option>
+                                    <option value="119">Чекунов Константин</option>
+                                    <option value="121">Ершова Вера</option>
+                                    <option value="125">Белоликова Анна</option>
+                                    <option value="129">Коробков Юрий</option>
+                                    <option value="132">Малинин Андрей</option>
+                                    <option value="134">Читипаховян Степан</option>
+                                    <option value="136">Чудакова Екатерина</option>
+                                    <option value="139">Осипов Виктор</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Регион </h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-region"
+                                    name="ReviewSearch[id_region]" data-attribute="region">
+                                    <option value="">Все</option>
+                                    <option value="1">Сибирь</option>
+                                    <option value="2">Урал</option>
+                                    <option value="3">Москва</option>
+                                    <option value="4">Юг</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Город </h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-city"
+                                    name="ReviewSearch[id_city]" data-attribute="city">
+                                    <option value="">Все</option>
+                                    <option value="1">Чита</option>
+                                    <option value="2">Екатеринбург</option>
+                                    <option value="3">Москва</option>
+                                    <option value="4">Ростов-на-Дону</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Локация </h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-office"
+                                    name="ReviewSearch[office]" data-attribute="office">
+                                    <option value="">Все</option>
+                                    <option value="1">Анохина ул., дом 88</option>
+                                    <option value="2">Бутина ул, дом 30</option>
+                                    <option value="3">Чкалова ул, дом 145</option>
+                                    <option value="4">Журавлева ул, дом 79</option>
+                                    <option value="5">Ленина ул., дом 56</option>
+                                    <option value="6">Шилова ул, дом 100</option>
+                                    <option value="7">Вайнера ул, дом 10</option>
+                                    <option value="8">8 марта ул., дом 149</option>
+                                    <option value="9">Блюхера ул., дом 39</option>
+                                    <option value="10">Металлургов ул, дом 87</option>
+                                    <option value="11">Сибирский тракт,, дом 2</option>
+                                    <option value="12">Сулимова ул, дом 50</option>
+                                    <option value="13">8 Марта ул, дом 46</option>
+                                    <option value="14">Щербакова ул., дом 4</option>
+                                    <option value="15">Малышева ул, дом 23</option>
+                                    <option value="16">Халтурина ул, дом 53</option>
+                                    <option value="17">Ленина пр.,, дом 49, корпус 49</option>
+                                    <option value="18">Малышева ул.,, дом 125, корпус 125</option>
+                                    <option value="19">Краснофлотцев ул.,, дом 2</option>
+                                    <option value="20">Вильгельма де Геннина ул.,, дом 42</option>
+                                    <option value="21">Бакинских Комиссаров ул., дом 99</option>
+                                    <option value="22">Челюскинцев ул, дом 27</option>
+                                    <option value="23">Белинского ул., дом 71</option>
+                                    <option value="24">Золотистый бульвар, дом 4</option>
+                                    <option value="25">Мичурина ул, дом 230</option>
+                                    <option value="26">Тверская Застава пл., дом 7 (1-й подъезд)</option>
+                                    <option value="27">Никольская ул., дом 17</option>
+                                    <option value="28">Павелецкая пл., дом 1а</option>
+                                    <option value="29">Тверская Застава пл., дом 7 (Пригородные кассы)</option>
+                                    <option value="30">Комсомольская пл., Казанский вокзал</option>
+                                    <option value="31">Калужское шоссе 21th км.</option>
+                                    <option value="32">1-ый Покровский проезд, дом 1</option>
+                                    <option value="33">Новорязанское шоссе, дом 8</option>
+                                    <option value="34">1-ый Покровский проезд, дом 5, помещение FMU5</option>
+                                    <option value="35">Земляной Вал ул, дом 29, корпус С16</option>
+                                    <option value="36">Киевская пл., дом 2</option>
+                                    <option value="37">Воронцовская ул, дом 48</option>
+                                    <option value="38">Таганская ул., дом 2</option>
+                                    <option value="39">Ботаническая ул., дом 29</option>
+                                    <option value="40">Энтузиастов ш., дом 31</option>
+                                    <option value="41">Варшавское шоссе, дом 34</option>
+                                    <option value="42">Нагатинская ул., дом 2, корпус A</option>
+                                    <option value="43">Открытое ш, дом 9, корпус 1</option>
+                                    <option value="44">Рождественка ул., дом 5, корпус 7</option>
+                                    <option value="45">Рябиновая ул., дом 59</option>
+                                    <option value="46">Сокольническая пл., дом 9, корпус А</option>
+                                    <option value="47">Измайловское ш., дом 71, корпус 10</option>
+                                    <option value="48">2-я Владимирская ул, дом 36, корпус 21</option>
+                                    <option value="49">Мясницкий проезд, дом 4/1</option>
+                                    <option value="50">Сигнальный проезд, дом 4/6</option>
+                                    <option value="51">Южнопортовая ул., дом 22</option>
+                                    <option value="52">Большая Новодмитровская ул, дом 14/4</option>
+                                    <option value="53">Народного Ополчения ул, дом 44, корпус 1</option>
+                                    <option value="54">Сущевский Вал ул., дом 5, строение 8</option>
+                                    <option value="55">Ладожская ул, дом 5</option>
+                                    <option value="56">26 км МКАД</option>
+                                    <option value="57">Шокальского проезд, дом 50, корпус А</option>
+                                    <option value="58">Новобутовский проезд, дом вл. 9</option>
+                                    <option value="59">Миклухо-Маклая ул., дом 11</option>
+                                    <option value="60">Ярцевская ул., дом 27, корпус А</option>
+                                    <option value="61">Дмитрия Ульянова ул., дом 28</option>
+                                    <option value="62">Кржижановского ул, дом 18, корпус 2</option>
+                                    <option value="63">Варшавское ш., дом 7, корпус 1</option>
+                                    <option value="64"> Лобачевского ул., дом 112 А, корпус 2</option>
+                                    <option value="65">Мира проспект, дом 146</option>
+                                    <option value="66">Преображенская площадь, дом 6</option>
+                                    <option value="67">Валовая ул, дом 6</option>
+                                    <option value="68">Киевская ул.,, дом 20</option>
+                                    <option value="69">Калужская площадь, дом 1</option>
+                                    <option value="70">Новодмитровская ул., дом 5а, корпус 2</option>
+                                    <option value="71">Энтузиастов ш., дом 12, корпус 2</option>
+                                    <option value="72">7-ая Кожуховская ул, дом 9</option>
+                                    <option value="73">74 км МКАД</option>
+                                    <option value="74">Мытная ул., дом 46, корпус 5</option>
+                                    <option value="75">9-ая Парковая ул, дом 27</option>
+                                    <option value="76">41 км МКАД, Калужское шоссе, дом 4, строение 1</option>
+                                    <option value="77">Варшавское ш, дом 140</option>
+                                    <option value="78">14 км МКАД внутренняя сторона, дом 3, корпус 2</option>
+                                    <option value="79">Нижний Сусальный пер, дом 5, строение 1</option>
+                                    <option value="80">Новослободская ул, дом 34, корпус 2</option>
+                                    <option value="81">47-й км МКАД</option>
+                                    <option value="82">Сельскохозяйственная ул., дом 17/1</option>
+                                    <option value="83">29 км шоссе Балтия (Новая Рига)</option>
+                                    <option value="84">Селезнёвская ул., дом 4</option>
+                                    <option value="85">Маши Порываевой ул, дом 36</option>
+                                    <option value="86">Шарикоподшипниковская ул., дом 13/3</option>
+                                    <option value="87">Вернадского пр-кт, дом 6</option>
+                                    <option value="88">Солянский проезд, дом 1</option>
+                                    <option value="89">Михалковская ул., дом 1/51</option>
+                                    <option value="90">Ленинградский пр-кт, дом 74, корпус 6</option>
+                                    <option value="91">Волгоградский пр-кт, дом 119, корпус А</option>
+                                    <option value="92">Садовническая ул, дом 42\1</option>
+                                    <option value="93">3-я улица Ямского поля, дом 13</option>
+                                    <option value="94">Дмитровское шоссе, дом 165 , корпус Б</option>
+                                    <option value="95">Ленинградский пр-кт, дом 80, корпус 17</option>
+                                    <option value="96">Зацепский вал ул., дом 4, корпус 2</option>
+                                    <option value="97">Пойменная ул, дом 1</option>
+                                    <option value="98">Текучева ул, дом 139/94</option>
+                                    <option value="99">Доватора, дом 267</option>
+                                    <option value="100">Пушкинская ул., дом 133/35</option>
+                                    <option value="101">улица Большая Садовая, дом 39</option>
+                                    <option value="102">Ворошиловский пр-кт, дом 105, корпус А</option>
+                                    <option value="103">Большая Садовая ул, дом 103</option>
+                                    <option value="104">Малиновского ул, дом 25</option>
+                                    <option value="105">Красноармейская ул, дом 72</option>
+                                    <option value="106">Пойменная ул, дом 1</option>
+                                    <option value="107">Малое зеленое кольцо, дом 3в</option>
+                                    <option value="108">25-я линия ул, дом 2, корпус 20</option>
+                                    <option value="109">Ленина пр-кт, дом 64</option>
+                                    <option value="110">14 Линия ул, дом 84</option>
+                                    <option value="111">Доватора ул, дом 158</option>
+                                    <option value="112">Малиновского ул, дом 23</option>
+                                    <option value="113">Обсерваторная ул, дом 15</option>
+                                    <option value="114">Сиверса пр-кт, дом 1, строение 3</option>
+                                    <option value="115">Ленина ул, дом 83</option>
+                                    <option value="116">Береговая ул, дом 12, корпус 1</option>
+                                    <option value="117">Королева пр-кт, дом 10/4</option>
+                                    <option value="118">Стачки пр-кт, дом 25</option>
+                                    <option value="120">Неопределенная локация</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Номер ресторана </h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-branche"
+                                    name="ReviewSearch[id_branche]" data-attribute="branche">
+                                    <option value="">Все</option>
+                                    <option value="120">0</option>
+                                    <option value="23">25446</option>
+                                    <option value="30">26347</option>
+                                    <option value="31">26348</option>
+                                    <option value="35">28259</option>
+                                    <option value="37">44718</option>
+                                    <option value="26">45028</option>
+                                    <option value="98">45661</option>
+                                    <option value="99">45887</option>
+                                    <option value="6">45888</option>
+                                    <option value="1">45889</option>
+                                    <option value="15">46644</option>
+                                    <option value="81">47760</option>
+                                    <option value="85">48550</option>
+                                    <option value="44">48587</option>
+                                    <option value="32">49405</option>
+                                    <option value="27">49437</option>
+                                    <option value="56">49850</option>
+                                    <option value="59">49989</option>
+                                    <option value="50">50301</option>
+                                    <option value="38">50496</option>
+                                    <option value="84">50756</option>
+                                    <option value="102">50876</option>
+                                    <option value="60">50925</option>
+                                    <option value="88">51023</option>
+                                    <option value="89">51094</option>
+                                    <option value="17">51131</option>
+                                    <option value="47">51145</option>
+                                    <option value="11">51239</option>
+                                    <option value="61">51263</option>
+                                    <option value="46">51338</option>
+                                    <option value="16">51443</option>
+                                    <option value="7">51444</option>
+                                    <option value="62">51517</option>
+                                    <option value="39">51682</option>
+                                    <option value="2">51684</option>
+                                    <option value="45">51999</option>
+                                    <option value="10">52377</option>
+                                    <option value="48">52418</option>
+                                    <option value="63">52973</option>
+                                    <option value="49">53126</option>
+                                    <option value="40">53132</option>
+                                    <option value="4">53546</option>
+                                    <option value="41">54010</option>
+                                    <option value="18">54145</option>
+                                    <option value="53">54218</option>
+                                    <option value="51">54346</option>
+                                    <option value="19">54364</option>
+                                    <option value="8">54412</option>
+                                    <option value="34">54571</option>
+                                    <option value="36">54573</option>
+                                    <option value="64">54632</option>
+                                    <option value="3">54723</option>
+                                    <option value="28">54904</option>
+                                    <option value="68">54905</option>
+                                    <option value="80">55392</option>
+                                    <option value="69">55622</option>
+                                    <option value="42">55674</option>
+                                    <option value="90">55725</option>
+                                    <option value="105">55791</option>
+                                    <option value="43">56041</option>
+                                    <option value="71">56223</option>
+                                    <option value="103">56285</option>
+                                    <option value="100">56402</option>
+                                    <option value="101">56473</option>
+                                    <option value="33">56663</option>
+                                    <option value="65">56787</option>
+                                    <option value="52">56790</option>
+                                    <option value="54">56838</option>
+                                    <option value="106">57266</option>
+                                    <option value="70">57309</option>
+                                    <option value="108">57505</option>
+                                    <option value="104">57745</option>
+                                    <option value="66">57948</option>
+                                    <option value="55">58081</option>
+                                    <option value="29">58170</option>
+                                    <option value="5">58238</option>
+                                    <option value="12">58355</option>
+                                    <option value="72">58617</option>
+                                    <option value="9">59047</option>
+                                    <option value="109">59101</option>
+                                    <option value="107">59340</option>
+                                    <option value="14">59355</option>
+                                    <option value="76">59403</option>
+                                    <option value="110">59873</option>
+                                    <option value="58">59951</option>
+                                    <option value="57">59952</option>
+                                    <option value="111">60156</option>
+                                    <option value="73">60529</option>
+                                    <option value="112">60751</option>
+                                    <option value="75">60755</option>
+                                    <option value="97">61139</option>
+                                    <option value="74">61315</option>
+                                    <option value="67">61671</option>
+                                    <option value="118">62182</option>
+                                    <option value="21">62292</option>
+                                    <option value="78">62678</option>
+                                    <option value="77">62706</option>
+                                    <option value="13">62833</option>
+                                    <option value="22">62869</option>
+                                    <option value="114">62870</option>
+                                    <option value="20">63123</option>
+                                    <option value="113">63249</option>
+                                    <option value="79">63256</option>
+                                    <option value="83">63564</option>
+                                    <option value="116">63700</option>
+                                    <option value="82">63998</option>
+                                    <option value="24">64293</option>
+                                    <option value="86">64294</option>
+                                    <option value="115">64360</option>
+                                    <option value="87">65110</option>
+                                    <option value="91">65367</option>
+                                    <option value="92">65397</option>
+                                    <option value="93">66861</option>
+                                    <option value="25">68661</option>
+                                    <option value="117">68693</option>
+                                    <option value="94">68784</option>
+                                    <option value="95">69010</option>
+                                    <option value="96">70540</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Старший РК </h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-senior_reg_consultant"
+                                    name="ReviewSearch[id_senior_reg_consultant]"
+                                    data-attribute="senior_reg_consultant">
+                                    <option value="">Все</option>
+                                    <option value="4">Татьяна Якимова</option>
+                                    <option value="64">Анастасия Плугатырева</option>
+                                    <option value="69">Ирина Пыстогова</option>
+                                    <option value="88">Тамара Баранова</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Региональный консультант </h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-reg_consultant"
+                                    name="ReviewSearch[id_reg_consultant]" data-attribute="reg_consultant">
+                                    <option value="">Все</option>
+                                    <option value="4">Татьяна Якимова</option>
+                                    <option value="8">Евгения Божедомова</option>
+                                    <option value="18">Анна Евстигнеева</option>
+                                    <option value="29">Юлия Сударева</option>
+                                    <option value="63">Татьяна Грек</option>
+                                    <option value="68">Мария Иванькова</option>
+                                    <option value="87">Екатерина Герасимова</option>
+                                    <option value="92">Елена Кабак</option>
+                                    <option value="123">Наталья Морозова</option>
+                                    <option value="143">Анастасия Безрукова</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="box">
+                            <h6>Менеджер по РБ</h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-dev_manager"
+                                    name="ReviewSearch[id_dev_manager]" data-attribute="dev_manager">
+                                    <option value="">Все</option>
+                                    <option value="21">Яна Стажилова</option>
+                                    <option value="26">Марина Тукшумская</option>
+                                    <option value="62">Светлана Баранова</option>
+                                    <option value="67">Кира Ананьина</option>
+                                    <option value="77">Ирина Виневцева</option>
+                                    <option value="86">Владимир Григоревский</option>
+                                    <option value="91">Анна Сорокина</option>
+                                    <option value="142">Ольга Смирнова</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <!-- блок выбора даты -->
+                        <div class="box">
+                            <h6>Период</h6>
+                            <div class="drp-container form-group field-reviewsearch-date">
+
+                                <input type="text" id="reviewsearch-date" class="form-control" name="ReviewSearch[date]"
+                                    value="13-04-2021 - 13-05-2021"
+                                    data-krajee-daterangepicker="daterangepicker_7e50e4d1">
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Валидация</h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm" name="ReviewSearch[validate]">
+                                    <option value="">Все</option>
+                                    <option value="1">Валидированные</option>
+                                    <option value="2">Не валидированные</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Тип источника</h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm"
+                                    name="ReviewSearch[id_source_type]">
+                                    <option value="">Все</option>
+                                    <option value="1">Google maps</option>
+                                    <option value="2">Yandex Карты</option>
+                                    <option value="3">2GIS</option>
+                                    <option value="4">Facebook</option>
+                                    <option value="5">Одноклассники</option>
+                                    <option value="6">ВК</option>
+                                    <option value="7">Ютуб</option>
+                                    <option value="8">Официальный сайт SubWay</option>
+                                    <option value="9">Приложение SubWay</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Статус</h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm" name="ReviewSearch[status]">
+                                    <option value="">Все</option>
+                                    <option value="11">Прибыл</option>
+                                    <option value="1">Новый</option>
+                                    <option value="2">В работе</option>
+                                    <option value="3">Просрочено</option>
+                                    <option value="9">Закрыто ОЛ</option>
+                                    <option value="10">Закрыто РК</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" value="" id="action_marker" name="action" />
+
+                        <!-- <div class="form-group">
+        <? /*= Html::submitButton('Подобрать', ['class' => 'btn btn-primary', 'style' => 'display: none']) */ ?>
+    </div>-->
+
+                    </div>
+
+                </form>
+
+
+
+
+
+
+            </div>
+
+            <div class="main-wrapper">
+                <div class="content-wrapper">
+
+                    <div class="cards-wrapper">
+                        <div class="card blue-card summary-data" data-action="all">
+                            <div class="card-icon">
+                                <img class="card-img" src="./img/mess-icon.svg" alt="union-icon">
+                            </div>
+                            <div class="w-line"></div>
+                            <div class="card-info">
+                                <p class="card-title">Всего уведомлений</p>
+                                <p class="card-count">
+                                    49234 </p>
+                            </div>
+                        </div>
+                        <div class="card red-card summary-data" data-action="detractors">
+                            <div class="card-icon">
+                                <img class="card-img" src="./img/bad-mess-icon.svg" alt="union-icon">
+                            </div>
+                            <div class="w-line"></div>
+                            <div class="card-info">
+                                <p class="card-title">Негативных упоминаний</p>
+                                <p class="card-count">
+                                    30820 </p>
+                            </div>
+                        </div>
+                        <div class="card yellow-card summary-data" data-action="passives">
+                            <div class="card-icon">
+                                <img class="card-img" src="./img/neutral-mess-icon.svg" alt="graduated-icon">
+                            </div>
+                            <div class="w-line"></div>
+                            <div class="card-info">
+                                <p class="card-title">Нейтральных упоминаний</p>
+                                <p class="card-count">
+                                    12310 </p>
+                            </div>
+                        </div>
+                        <div class="card green-card summary-data" data-action="promoters">
+                            <div class="card-icon">
+                                <img class="card-img" src="./img/good-mess-icon.svg" alt="baby-icon">
+                            </div>
+                            <div class="w-line"></div>
+                            <div class="card-info">
+                                <p class="card-title">Позитивных упоминаний</p>
+                                <p class="card-count">
+                                    6091 </p>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="card blue-card summary-data" data-action="all">
+                <div class="card-icon">
+                    <img class="card-img" src="./img/mess-icon.svg" alt="union-icon">
+                </div>
+                <div class="w-line"></div>
+                <div class="card-info">
+                    <p class="card-title">Всего отзывов</p>
+                    <p class="card-count">
+                        0                    </p>
+                </div>
+            </div>
+            <div class="card yellow-card summary-data" data-action="alerts">
+                <div class="card-icon">
+                    <img class="card-img" src="./img/neutral-mess-icon.svg" alt="graduated-icon">
+                </div>
+                <div class="w-line"></div>
+                <div class="card-info">
+                    <p class="card-title">Всего алертов</p>
+                    <p class="card-count">
+                        0                    </p>
+                </div>
+            </div>
+            <div class="card red-card summary-data" data-action="overtimed">
+                <div class="card-icon">
+                    <img class="card-img" src="./img/bad-mess-icon.svg" alt="union-icon">
+                </div>
+                <div class="w-line"></div>
+                <div class="card-info">
+                    <p class="card-title">Просроченные алерты</p>
+                    <p class="card-count">
+                        0                    </p>
+                </div>
+            </div>
+            <div class="card dark-blue-card summary-data" data-action="is-new">
+                <div class="card-icon">
+                    <img class="card-img" src="./img/alert-4.svg" alt="baby-icon">
+                </div>
+                <div class="w-line"></div>
+                <div class="card-info">
+                    <p class="card-title">Новые алерты</p>
+                    <p class="card-count">
+                        0                    </p>
+                </div>
+            </div>
+            <div class="card brown-card summary-data" data-action="in-work">
+                <div class="card-icon">
+                    <img class="card-img" src="./img/alert-2.svg" alt="baby-icon">
+                </div>
+                <div class="w-line"></div>
+                <div class="card-info">
+                    <p class="card-title">Алерты в работе</p>
+                    <p class="card-count">
+                        0                    </p>
+                </div>
+            </div>
+            <div class="card green-card summary-data" data-action="closed">
+                <div class="card-icon">
+                    <img class="card-img" src="./img/good-mess-icon.svg" alt="baby-icon">
+                </div>
+                <div class="w-line"></div>
+                <div class="card-info">
+                    <p class="card-title">Закрытые</p>
+                    <p class="card-count">
+                        0                    </p>
+                </div>
+            </div> -->
+                    </div>
+
+                    <div class="q-section">
+                        <div class="box line-chart-box" style="">
+                            <div class="chartjs-size-monitor"
+                                style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                <div class="chartjs-size-monitor-expand"
+                                    style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                    </div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink"
+                                    style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                    <div style="position:absolute;width:200%;height:200%;left:0; top:0">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <canvas id="linesChart" class="chartjs-render-monitor"
+                style="display: block; height: 167px; width: 584px;"></canvas> -->
+                            <canvas id="linesChart" width="1100" height="270"></canvas>
+                            <!-- <canvas id="linesChart" style="max-height: 400px;"></canvas> -->
+                        </div>
+
+                    </div>
+                    <div class="tables-wrapper">
+                        <div class="table-box color-table green-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Топ лучших</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Тема 1</td>
+                                        <td>24</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тема 2</td>
+                                        <td>56</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тема 3</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тема 4</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тема 5</td>
+                                        <td>12</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-box white-table">
+                            <div class="table-position">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Причины</th>
+                                            <th>%</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Скорость обслужиывания</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Вежливость</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Компетентность сотрудников</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Желание помочь</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Иное</td>
+                                            <td>12</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tables-wrapper">
+                        <div class="table-box color-table red-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Топ хужших</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Тема 1</td>
+                                        <td>24</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тема 2</td>
+                                        <td>56</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тема 3</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тема 4</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тема 5</td>
+                                        <td>12</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-box white-table">
+                            <div class="table-position">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Причины</th>
+                                            <th>%</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Скорость обслужиывания</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Вежливость</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Компетентность сотрудников</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Желание помочь</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Иное</td>
+                                            <td>12</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-three-points-section">
+                        <div class="range-three-points-wrapper">
+                            <h3 class="chart-title">Социальные сети (VK, Одноклассники, Facebook, Instagram, YouTube)
+                            </h3>
+                            <div class="main-data-wrapper">
+                                <div class="main-data">
+                                    <div class="point-item-wrapper">
+                                        <p class="item-name">VK</p>
+                                        <div class="range-area">
+                                            <div class="point-box point1">
+                                                <span class="point-value">40</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="point-box point2">
+                                                <span class="point-value">40</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="point-box point3">
+                                                <span class="point-value">20</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="point-item-wrapper">
+                                        <p class="item-name">Одноклассники</p>
+                                        <div class="range-area">
+                                            <div class="point-box point1">
+                                                <span class="point-value">24</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="point-box point2">
+                                                <span class="point-value">38</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="point-box point3">
+                                                <span class="point-value">38</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="point-item-wrapper">
+                                        <p class="item-name">Facebook</p>
+                                        <div class="range-area">
+                                            <div class="point-box point1">
+                                                <span class="point-value">24</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="point-box point2">
+                                                <span class="point-value">38</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="point-box point3">
+                                                <span class="point-value">38</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="point-item-wrapper">
+                                        <p class="item-name">Instagram</p>
+                                        <div class="range-area">
+                                            <div class="point-box point1">
+                                                <span class="point-value">50</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="point-box point2">
+                                                <span class="point-value">25</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="point-box point3">
+                                                <span class="point-value">25</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="point-item-wrapper">
+                                        <p class="item-name">YouTube</p>
+                                        <div class="range-area">
+                                            <div class="point-box point1">
+                                                <span class="point-value">20</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="point-box point2">
+                                                <span class="point-value">40</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="point-box point3">
+                                                <span class="point-value">40</span>%
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40 шт</span>
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chart-legend">
+                                    <ul class="legend-list">
+                                        <li class="legend-item red">Негатив</li>
+                                        <li class="legend-item orange">Нейтрал</li>
+                                        <li class="legend-item green">Позитив</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client-website-chart-section">
+                        <div class="website-chart-data-wrapper">
+                            <h3 class="chart-title">Официальные источники (сайт Subway, приложение Subway)</h3>
+                            <div class="main-data-wrapper">
+                                <div class="main-data websites-data">
+                                    <div class="point-item-wrapper">
+                                        <p class="item-name">сайт Subway</p>
+                                        <div class="range-area">
+                                            <div class="point-box point3">
+                                                <span class="data-point-value">287</span>
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">70</span>%
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="point-item-wrapper">
+                                        <div class="range-area">
+                                            <div class="point-box point2">
+                                                <span class="data-point-value">123</span>
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40</span>%
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="point-item-wrapper">
+                                        <div class="range-area">
+                                            <div class="point-box point1">
+                                                <span class="data-point-value">45</span>
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">10</span>%
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="point-item-wrapper">
+                                        <p class="item-name" style="margin-top: 20px;">приложение Subway</p>
+                                        <div class="range-area">
+                                            <div class="point-box point3">
+                                                <span class="data-point-value">287</span>
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">70</span>%
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="point-item-wrapper">
+                                        <div class="range-area">
+                                            <div class="point-box point2">
+                                                <span class="data-point-value">123</span>
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">40</span>%
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="point-item-wrapper">
+                                        <div class="range-area">
+                                            <div class="point-box point1">
+                                                <span class="data-point-value">45</span>
+                                                <div class="point-tooltip">
+                                                    <span class="point-count">10</span>%
+                                                    <i class="triangle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chart-legend">
+                                    <ul class="legend-list">
+                                        <li class="legend-item red">Негатив</li>
+                                        <li class="legend-item orange">Нейтрал</li>
+                                        <li class="legend-item green">Позитив</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nps-section">
+                        <h3 class="chart-title">Насколько вероятно, что Вы порекомендуете этого дилера
+                            друзьям/родственникам?</h3>
+                        <div class="nps-flex-box">
+                            <div style="width: 100%; overflow-x: auto;">
+                                <div class="points_0-10_box">
+                                    <div class="points-names">
+                                        <span class="detractors">DETRACTION</span>
+                                        <span class="passives">PASSIVE</span>
+                                        <span class="promoters">PROMOTERS</span>
+                                    </div>
+                                    <div class="lines-wrapper">
+                                        <div class="detractors-line"></div>
+                                        <div class="passives-line"></div>
+                                        <div class="promoters-line"></div>
+                                    </div>
+                                    <div class="all-points-wrapper">
+                                        <div class="points-box detractor-points">
+                                            <div class="point point-detractor">
+                                            </div>
+                                            <div class="point point-detractor">
+                                            </div>
+                                            <div class="point point-detractor">
+                                            </div>
+                                        </div>
+                                        <div class="points-box passives-points">
+                                            <div class="point point-passive"></div>
+                                        </div>
+                                        <div class="points-box promoters-points">
+                                            <div class="point point-promoter"></div>
+                                        </div>
+                                    </div>
+                                    <div class="bottom-data">
+                                        <span class="number">23</span>
+                                        <span class="number">45</span>
+                                        <span class="number">11</span>
+                                        <span class="number">204</span>
+                                        <span class="number">99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="total-box" style="width: 57%">
+                                <div class="percentage-data-box">
+                                    <div class="feedbacks-wrapper">
+                                        <p class="feedbacks-txt">Итого отзывов: <span class="feedbacks-count">234</span>
+                                        </p>
+                                    </div>
+                                    <div class="percent-item" style="margin-top: 30px;">
+                                        <span class="circle green"><i class="star"></i></span>
+                                        <span class="item-name">Promoters</span>
+                                        <span class="percent-value">78</span>
+                                    </div>
+                                    <div class="percent-item">
+                                        <span class="circle yellow"><i class="star"></i></span>
+                                        <span class="item-name">Passives</span>
+                                        <span class="percent-value">56</span>
+                                    </div>
+                                    <div class="percent-item">
+                                        <span class="circle red"><i class="star"></i></span>
+                                        <span class="item-name">Detractors</span>
+                                        <span class="percent-value">41</span>
+                                    </div>
+                                </div>
+                                <div class="total-circle">
+                                    <p class="title">NSR Score</p>
+                                    <p class="total-value">0.58</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two-charts-container">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">Статистика работы с отзывами</h3>
+                            <div class="box" style="margin-top: 30px;">
+                                <div class="chartjs-size-monitor"
+                                    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <canvas id="alert-statistic-chart-canvas" width="730" height="208"
+                                    class="chartjs-render-monitor"
+                                    style="display: block; height: 167px; width: 584px;"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper pie-chart-wrapper">
+                            <h3 class="chart-title">Источник публикаций</h3>
+                            <div class="chart-flex-box">
+                                <div class="canvas-box pie-canvas-box">
+                                    <div id="pieChart"></div>
+                                </div>
+                                <div class="chart-legend pie-legend">
+                                    <ul class="legend-list">
+                                        <li class="legend-item color1">Одноклассники</li>
+                                        <li class="legend-item color2">Instagram</li>
+                                        <li class="legend-item color3">Facebook</li>
+                                        <li class="legend-item color4">Ютуб</li>
+                                        <li class="legend-item color5">Google maps</li>
+                                        <li class="legend-item color6">Yandex maps</li>
+                                        <li class="legend-item color7">Официальный сайт</li>
+                                        <li class="legend-item color8">моб. приложение</li>
+                                </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <script>
+            //Социальные сети
+            $(document).ready(function () {
+                let percentItems = document.querySelectorAll('.point-value');
+                for (let i = 0; i < percentItems.length; i++) {
+                    let pointVal = percentItems[i].innerHTML;
+                    if (pointVal == 0) {
+                        $(percentItems[i]).closest('div').hide();
+                    } else {
+                        $(percentItems[i]).closest('div').show();
+                        $(percentItems[i]).closest('div').css('width', (pointVal) + '%');
+                    }
+                }
+            });
+            //Официальные источники
+            $(document).ready(function () {
+                let percentValItems = document.querySelectorAll('.website-chart-data-wrapper .point-count');
+                for (let i = 0; i < percentValItems.length; i++) {
+                    let percentVal = percentValItems[i].innerHTML;
+                    let percentLine = document.querySelectorAll('.websites-data .point-box');
+                    $(percentLine[i]).css('width', (percentVal) + '%');
+                }
+            });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script>
+            let draw = Chart.controllers.line.prototype.draw;
+            Chart.controllers.line = Chart.controllers.line.extend({
+                draw: function () {
+                    draw.apply(this, arguments);
+                    let ctx = this.chart.chart.ctx;
+                    let _stroke = ctx.stroke;
+                    ctx.stroke = function () {
+                        ctx.save();
+                        ctx.shadowColor = '#BDDA1C';
+                        ctx.shadowBlur = 8;
+                        ctx.shadowOffsetX = 0;
+                        ctx.shadowOffsetY = 0;
+                        _stroke.apply(this, arguments)
+                        ctx.restore();
+                    }
+                }
+            });
+            console.log(screen.width);
+            if (screen.width < 400) {
+                document.getElementById('linesChart').setAttribute("width","500");
+                document.getElementById('linesChart').setAttribute("height","500");
+            }
+            else if (screen.width < 992) {
+                document.getElementById('linesChart').setAttribute("width","500");
+                document.getElementById('linesChart').setAttribute("height","250");
+            }
+            var ctx = document.getElementById('linesChart').getContext("2d");
+            var redGradientFill = ctx.createLinearGradient(0, 0, 100, 200);
+            redGradientFill.addColorStop(0, "rgba(253, 142, 142, 0.5)");
+            redGradientFill.addColorStop(1, "rgba(255, 206, 206, 0.5)");
+
+            var greenGradientFill = ctx.createLinearGradient(0, 0, 0, 200);
+            greenGradientFill.addColorStop(0, 'rgba(31, 174, 104, 0.5)');
+            greenGradientFill.addColorStop(1, 'rgba(178, 221, 106, 0.05)');
+
+            var orangeGradientFill = ctx.createLinearGradient(0, 0, 0, 200);
+            orangeGradientFill.addColorStop(0, 'rgba(254, 152, 68, 0.5)');
+            orangeGradientFill.addColorStop(1, 'rgba(252, 207, 170, 0.095)');
+
+            var linesChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["12.05", "13.05", "14.05", "15.05", "16.05", "17.05", "18.05"],
+                    datasets: [
+                        {
+                            label: "",
+                            borderColor: "#EA5151",
+                            pointBorderColor: "rgba(0, 0, 0, 0)",
+                            pointBackgroundColor: "rgba(0, 0, 0, 0)",
+                            pointHoverBackgroundColor: "#EA5151",
+                            pointHoverBorderColor: "#EA5151",
+                            pointBorderWidth: 10,
+                            pointHoverRadius: 10,
+                            pointHoverBorderWidth: 1,
+                            pointRadius: 3,
+                            fill: true,
+                            backgroundColor: redGradientFill,
+                            borderWidth: 4,
+                            data: [10, 40, 35, 62, 13, 87, 41],
+                        },
+                        {
+                            label: "",
+                            borderColor: "#1FAE68",
+                            pointBorderColor: "rgba(0, 0, 0, 0)",
+                            pointBackgroundColor: "rgba(0, 0, 0, 0)",
+                            pointHoverBackgroundColor: "#1FAE68",
+                            pointHoverBorderColor: "#1FAE68",
+                            pointBorderWidth: 10,
+                            pointHoverRadius: 10,
+                            pointHoverBorderWidth: 1,
+                            pointRadius: 3,
+                            fill: true,
+                            backgroundColor: greenGradientFill,
+                            borderWidth: 4,
+                            data: [23, 58, 41, 65, 70, 70, 42]
+                        },
+                        {
+                            label: "",
+                            borderColor: "#FE9844",
+                            pointBorderColor: "rgba(0, 0, 0, 0)",
+                            pointBackgroundColor: "rgba(0, 0, 0, 0)",
+                            pointHoverBackgroundColor: "#FE9844",
+                            pointHoverBorderColor: "#FE9844",
+                            pointBorderWidth: 10,
+                            pointHoverRadius: 10,
+                            pointHoverBorderWidth: 1,
+                            pointRadius: 3,
+                            fill: true,
+                            backgroundColor: orangeGradientFill,
+                            borderWidth: 4,
+                            data: [59, 67, 32, 20, 18, 37, 28]
+                        },
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false,
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                fontColor: "rgba(0,0,0,0.5)",
+                                fontStyle: "bold",
+                                fontSize: 13,
+                                beginAtZero: true,
+                                suggestedMax: 90,
+                                suggestedMin: 0,
+                                min: 0,
+                                max: 90,
+                                stepSize: 10,
+                            },
+                            gridLines: {
+                                drawTicks: true,
+                                display: true
+                            }
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                display: true
+                            },
+                            ticks: {
+                                padding: 20,
+                                fontColor: "rgba(0,0,0,0.5)",
+                                fontStyle: "bold",
+                                fontSize: 13,
+                            }
+                        }]
+                    },
+                    plugins: {
+                        datalabels: {
+                            formatter: function () {
+                                return '';
+                            },
+                            font: {
+                                size: '14',
+                                weight: "normal"
+                            },
+                            color: "#000"
+                        }
+                    },
+                }
+            });
+
+
+            var alertStatisticVerticalChartData3 = {
+                labels: [
+                    "Всего",
+                    "Закрыто",
+                    "В работе",
+                    "Новый",
+                    "Просрочен"
+                ],
+                datasets: [{
+                    label: '',
+                    data: [
+                        3,
+                        2,
+                        4,
+                        7,
+                        6
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            var alertStatisticChartCanvas = document.getElementById("alert-statistic-chart-canvas").getContext('2d');
+
+            var alertStatisticChart = new Chart(alertStatisticChartCanvas, {
+                type: 'horizontalBar',
+                data: alertStatisticVerticalChartData3,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false,
+                        fontSize: 0,
+                        position: 'right',
+                        fullWidth: true,
+                        labels: {
+                            padding: 10,
+                            boxWidth: 15
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                suggestedMax: 10,
+                                max: 10,
+                                beginAtZero: true,
+                            }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                suggestedMax: 10,
+                                suggestedMin: 0,
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    plugins: {
+                        datalabels: {
+                            formatter: function () {
+                                return '';
+                            },
+                            font: {
+                                size: '14',
+                                weight: "normal"
+                            },
+                            color: "#000"
+                        }
+                    },
+
+                }
+            });
+
+            am4core.useTheme(am4themes_animated);
+            // Create chart instance
+            var chart = am4core.create("pieChart", am4charts.PieChart);
+            chart.hiddenState.properties.opacity = 0;
+            // Add data
+            chart.data = [{
+                "socialNetwork": "Одноклассники",
+                "litres": 500,
+                "color": am4core.color("#85D2F0")
+            }, {
+                "socialNetwork": "Instagram",
+                "litres": 391.1,
+                "color": am4core.color("#EE8E7B")
+            }, {
+                "socialNetwork": "Facebook",
+                "litres": 287,
+                "color": am4core.color("#FF8D8E")
+            }, {
+                "socialNetwork": "Ютуб",
+                "litres": 365.8,
+                "color": am4core.color("#FEC03D")
+            }, {
+                "socialNetwork": "Google maps",
+                "litres": 439.9,
+                "color": am4core.color("#FFE700")
+            }, {
+                "socialNetwork": "Yandex maps",
+                "litres": 328.3,
+                "color": am4core.color("#7AA0D7")
+            }, {
+                "socialNetwork": "Официальный сайт",
+                "litres": 341.9,
+                "color": am4core.color("#82F886")
+            },
+            {
+                "socialNetwork": "моб. приложение",
+                "litres": 701.9,
+                "color": am4core.color("#C6B7E8")
+            },];
+
+            // Add and configure Series
+            var pieSeries = chart.series.push(new am4charts.PieSeries());
+            pieSeries.dataFields.value = "litres";
+            pieSeries.dataFields.category = "socialNetwork";
+
+            pieSeries.ticks.template.disabled = true;
+            pieSeries.alignLabels = false;
+            pieSeries.labels.template.text = "{value.percent.formatNumber('#.0')}%";
+            pieSeries.labels.template.radius = am4core.percent(-40);
+            pieSeries.labels.template.fill = am4core.color("white");
+            pieSeries.labels.template.fontSize = 14;
+            pieSeries.tooltip.autoTextColor = false;
+            pieSeries.tooltip.label.fill = am4core.color("#FFFFFF");
+            pieSeries.slices.template.propertyFields.fill = "color";
+
+            pieSeries.labels.template.adapter.add("radius", function (radius, target) {
+                if (target.dataItem && (target.dataItem.values.value.percent < 10)) {
+                    return 0;
+                }
+                return radius;
+            });
+
+            pieSeries.labels.template.adapter.add("fill", function (color, target) {
+                if (target.dataItem && (target.dataItem.values.value.percent < 10)) {
+                    return am4core.color("rgba(0,0,0,0)");
+                }
+                return color;
+            });
+
+            var shadow = pieSeries.filters.push(new am4core.DropShadowFilter());
+            shadow.dx = 10;
+            shadow.dy = 10;
+            shadow.blur = 10;
+            shadow.opacity = 0.25;
+
+            $(document).ready(function () {
+                $("g[aria-labelledby]").hide();
+            })
+
+        </script>
+
+    </div>
+
+    </div>
+
+    <div class="scrollup">
+        <a href="#" class="text-white"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.js" integrity="sha512-mh+AjlD3nxImTUGisMpHXW03gE6F4WdQyvuFRkjecwuWLwD2yCijw4tKA3NsEFpA1C3neiKhGXPSIGSfCYPMlQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="./js/image-uploader.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/script-companies.js"></script>
+    <script src="./js/jquery.time-to.min.js"></script>
+</body>
+
+</html>

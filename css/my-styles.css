@@ -1,0 +1,242 @@
+.searh-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  
+  .searh-row .search-form {
+    padding-bottom: 20px;
+  }
+  
+  .searh-row .search-form .title {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #605A5A;
+    padding-bottom: 15px;
+  }
+  
+  .searh-row .search-form form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .searh-row .search-form form .input-search {
+    width: 320px;
+    max-width: calc(100% - 50px);
+  }
+  
+  .searh-row .search-form form .input-search input {
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    height: 32px;
+    outline: none;
+  }
+  
+  .searh-row .search-form form .submit-search {
+    margin-left: 8px;
+  }
+  
+  .searh-row .search-form form .submit-search input {
+    padding: 5px 20px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 17px;
+    color: #FFFFFF;
+    background: #01BBD4;
+    border-radius: 5px;
+    height: 32px;
+    border: none;
+    outline: none;
+  }
+  
+  .searh-row .box {
+    padding-bottom: 13px;
+  }
+  
+  .searh-row .upload {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 260px;
+    padding-bottom: 20px;
+  }
+  
+  .searh-row .upload a {
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+  }
+  
+  .searh-row .upload .text {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #01BBD4;
+    padding-left: 65px;
+  }
+  
+  .searh-row .upload .img {
+    width: 45px;
+  }
+  
+  .searh-row .upload .img img {
+    max-width: 100%;
+  }
+
+  .table-wrapper table tbody tr td .label {
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 90px;
+    max-width: 110px;
+    vertical-align: baseline;
+    display: inline-block;
+    white-space: break-spaces;
+    text-align: center;
+    /* padding: 5px 10px; */
+    /* border-radius: 5px; */
+    /* width: 90px; */
+    /* color: #151615; */
+  }
+
+  .table-wrapper table tbody tr td .label.label-new {
+    background-color: #8986c0;
+  }
+
+  .table-wrapper table tbody tr td .label.label-work {
+    background-color: #fdbd83;
+  }
+
+  .table-wrapper table tbody tr td .label.label-expired {
+    background-color: #f29db2;
+  }
+
+  .table-wrapper table tbody tr td .label.label-revision {
+    background-color: #f29db2;
+  }
+
+  .table-wrapper table tbody tr td .label.label-approval {
+    background-color: #fdbd83;
+  }
+
+  .table-wrapper table tbody tr td .label.label-closed {
+    background-color: #0acc54;
+  }
+
+  /* backend\views\review\view-review */
+
+  #content .info-box {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.title {
+  border-bottom: solid 1px #cccccc;
+}
+
+#content .info-box .title h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #090909;
+  padding-bottom: 20px;
+  background-color: #efefef;
+  text-align: center;
+}
+
+#content .info-box .info-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 5px;
+  -webkit-box-shadow: 10px 10px 36px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 10px 10px 36px 0px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+}
+
+#content .info-box .info-row .info-col {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+#content .info-box .info-row .info-col .circle-row {
+  padding-left: 5px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+#content .info-box .info-row .info-col .info {
+  font-size: 14px;
+  color: #171313;
+  line-height: 1.5;
+  text-align: left;
+}
+

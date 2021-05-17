@@ -1,0 +1,28 @@
+.login-page,
+.register-page {
+    background-image: url(./../img/Subway_restaurant.jpg) !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.login-logo a,
+.register-logo a {
+    color: #ffffff;
+}
+* {
+    box-sizing: border-box;
+}
+.form-control {
+    width: 100%;
+    padding: 15px 10px;
+    outline: none;
+    border: 1px solid #367fa9;
+    border-radius: 5px;
+}
+
+.btn-primary.btn.btn-flat {
+    padding: 10px 20px;
+    color: #ffffff;
+    border-radius: 5px;
+}

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet">
+    <link href="./css/style1.css" rel="stylesheet">
+    <link href="./css/my-styles.css" rel="stylesheet">
+    <link href="./css/image-uploader.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/my-styles.css" rel="stylesheet">
+    <link href="./css/timeTo.css" rel="stylesheet">
+    <link href="./css/menu-style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="navbar-aside">
+                <button type="button" class="btn-aside-menu toggle-sidebar">
+                </button>
+            </div>
+            <div class="navbar-user">
+                <div class="user">
+                    <div class="user-wrapper show-user-dropdown">
+                        <div class="icon-user"></div>
+                        <div class="user-name">admin</div>
+                    </div>
+                    <div class="dropdown-user">
+                        <ul>
+                            <li>
+                                <a class="logout " href="/admin/site/logout" data-method="post"><span
+                                        class="ti-power-off pr-2"></span> Выход </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="sidebar">
+            <div class="menu-sidebar">
+                <div class="logo">
+                    <a href="/admin">
+                        <img src="./img/logo.png" alt="Subways">
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul class="sidebar-nav treeview-menu">
+                            <li>
+                                <a href="./index.html">
+                                    <i class="fa fa-th"></i>
+                                    Ключевые показатели
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/review">
+                                    <i class="fa fa-star-half-o"></i>
+                                    Отзывы
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/branches">
+                                    <i class="fa fa-home"></i>
+                                    Мои компании
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/source-type">
+                                    <i class="fa fa-folder-open"></i>
+                                    Источники
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/user">
+                                    <i class="fa fa-users"></i>
+                                    Пользователи
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/import">
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                    Импорт отзывов
+                                </a>
+                            </li>
+                        </ul>
+
+
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content" id="content">
+
+
+            <style>
+                .hide {
+                    visibility: hidden;
+                }
+
+                .show {
+                    visibility: visible;
+                }
+
+                .form-group {
+                    margin-bottom: 0px;
+                }
+
+                .teg {
+                    border: 1px #555 solid;
+                    padding: 1px;
+                    margin: 2px;
+                    border-radius: 3px;
+                }
+
+                .title {
+                    border-bottom: solid 1px #cccccc;
+                }
+            </style>
+
+            <div class="breadcrumps">
+                <ul>
+                    <li>
+                        <a href="/admin/review">
+                            <i class="fa fa-star-half-o"></i> Отзывы
+                        </a>
+                    </li>
+                    <li>
+                        / Отзыв: 98843 </li>
+                </ul>
+            </div>
+
+            <h2 class="title">Отзыв: 98843</h2>
+
+            <a class="btn btn-success" href="https://subway-feedback.ru/admin/review"
+                style="margin-top: 15px; margin-left: 20px">Назад</a>
+            <div class="info-box">
+                <div class="title">
+                    <h2>Профиль клиента</h2>
+                </div>
+                <div class="info-row">
+                    <div class="info-col">
+                        <div class="circle-row">
+                            <div class="circle">
+                                <img src="./img/detail-view-circle.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p><b>ФИО Клиента:</b> KUSKUS KUSKUS</p>
+                            <p><b>Возраст:</b> -</p>
+                            <p><b>Пол:</b> -</p>
+                            <p><b>Email:</b> -</p>
+                            <p><b>Номер телефона:</b> -</p>
+                            <p><b>Источник:</b> </p>
+                        </div>
+                    </div>
+                    <div class="info-col">
+                        <div class="circle-row">
+                            <div class="circle">
+                                <img src="./img/detail-view-circle.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p><b>Дата и время отзыва:</b> 25.04.2021 в 13:59</p>
+                            <p><b>Номер ресторана:</b> 0</p>
+                            <p><b>Адрес:</b> Неопределенная локация</p>
+                            <p><b>Город:</b> -</p>
+                            <p><b>Регион:</b> -</p>
+                            <p><b>Франчайзи:</b> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form id="w0" action="/admin/review/view-review?id=98860" method="post">
+                <input type="hidden" name="_csrf-backend"
+                    value="J9NBNR8qXcTEr51jTFFc1KZdm_0HrX2VxZ2lYx9hzrBSiwZ8fF8Eho2byAI1Iyua_mrhi1_ZLaPx-dwvRzmW_A==">
+                <input type="hidden" id="id_review" value="98860">
+                <input type="hidden" id="countdown_date" value="">
+
+                <div id="detail-info-box" class="detail-info-box show anket-info-table">
+                    <div class="title">
+                        <h2>Отзывы</h2>
+                    </div>
+                    <div class="table-box">
+                        <table class="mb-4" data-select2-id="select2-data-7-s4w0">
+                            <thead>
+                                <tr>
+                                    <th>Оценка</th>
+                                    <th>Комментарии клиента</th>
+                                    <th>Причины</th>
+                                </tr>
+                            </thead>
+                            <tbody data-select2-id="select2-data-6-xxrv">
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <select class="form-control" name="Review[id_branche]">
+                                            <option value="120">Неопределенная локация</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div class="form-group field-review-not_show">
+
+                                            <input type="hidden" name="Review[not_show]" value="0"><label><input
+                                                    type="checkbox" id="review-not_show" class="display"
+                                                    name="Review[not_show]" value="1"> Скрыть анкету</label>
+
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr data-select2-id="select2-data-5-wvy5">
+                                    <td>
+                                        <div class="form-group field-review-rate has-success">
+                                            <select id="review-rate" class="form-control" name="Review[rate]"
+                                                aria-invalid="false">
+                                                <option value=" "> </option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5" selected="">5</option>
+                                            </select>
+
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group field-review-comment has-success">
+
+                                            <input type="text" id="review-comment" class="form-control"
+                                                name="Review[comment]"
+                                                value="Маленький, уютный ТЦ.Единственное что предложила бы-это больше фудкорта,то есть можно бургер Кинг открыть,или еще лучше Subway. Очень любим, но ближайшее это МЕГА дыбенко. В остальном можно купить все что пожелаете. Отремонтировать, починить,подшить,постричся.На 3-ем этаже детская парикмахерская есть.Мы от нее в восторге! Девочки все супер! Администратор уже всех деток в лицо знает,по имени даже! Наша мастер волшебных ручек Елена,тоже самая родная стала В общем,советую всем!"
+                                                aria-invalid="false">
+
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </td>
+                                    <td data-select2-id="select2-data-4-wmf4">
+                                        <select class="js-example-placeholder-multiple select2-hidden-accessible"
+                                            name="Review[id_tag][]" multiple="" data-select2-id="select2-data-1-awvz"
+                                            tabindex="-1" aria-hidden="true">
+                                            <option value="1" data-select2-id="select2-data-11-zura">Качество продукта
+                                            </option>
+                                            <option value="2" data-select2-id="select2-data-12-2zht">Стандарты
+                                                безопасности и гигиена</option>
+                                            <option value="3" data-select2-id="select2-data-13-bx9f">Чистота</option>
+                                            <option value="4" data-select2-id="select2-data-14-qoa2">Вежливость и
+                                                клиентоориентированность</option>
+                                            <option value="5" data-select2-id="select2-data-15-jkoh">Скорость
+                                                обслуживания</option>
+                                            <option value="6" data-select2-id="select2-data-16-snyu">Акции</option>
+                                            <option value="7" data-select2-id="select2-data-17-8fxc">Расчет</option>
+                                            <option value="8" data-select2-id="select2-data-18-6h64">Доставка и
+                                                предзаказ</option>
+                                            <option value="9" data-select2-id="select2-data-19-juc1">Часы работы
+                                            </option>
+                                            <option value="10" data-select2-id="select2-data-20-alsy">Мобильное
+                                                приложение</option>
+                                            <option value="11" data-select2-id="select2-data-21-8zow">Другое</option>
+                                        </select><span
+                                            class="select2 select2-container select2-container--default select2-container--above"
+                                            dir="ltr" data-select2-id="select2-data-2-ukfd"
+                                            style="width: 322.3px;"><span class="selection"><span
+                                                    class="select2-selection select2-selection--multiple"
+                                                    role="combobox" aria-haspopup="true" aria-expanded="false"
+                                                    tabindex="-1" aria-disabled="false">
+                                                    <ul class="select2-selection__rendered"
+                                                        id="select2-Reviewid_tag-6n-container"></ul><span
+                                                        class="select2-search select2-search--inline"><input
+                                                            class="select2-search__field" type="search" tabindex="0"
+                                                            autocorrect="off" autocapitalize="none" spellcheck="false"
+                                                            role="searchbox" aria-autocomplete="list" autocomplete="off"
+                                                            aria-describedby="select2-Reviewid_tag-6n-container"
+                                                            placeholder="Выберите причину" style="width: 100%;"></span>
+                                                </span></span><span class="dropdown-wrapper"
+                                                aria-hidden="true"></span></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-submit-cont">
+                        <button type="submit" class="btn btn-success pull-left">Завершить
+                            валидацию</button>
+                    </div>
+                </div>
+            </form>
+            <!--комментирование ответа-->
+        </div>
+
+    </div>
+
+    </div>
+
+    <div class="scrollup">
+        <a href="#" class="text-white"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.js"
+        integrity="sha512-mh+AjlD3nxImTUGisMpHXW03gE6F4WdQyvuFRkjecwuWLwD2yCijw4tKA3NsEFpA1C3neiKhGXPSIGSfCYPMlQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="./js/image-uploader.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/script-companies.js"></script>
+    <script src="./js/jquery.time-to.min.js"></script>
+</body>
+
+</html>
