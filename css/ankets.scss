@@ -690,6 +690,7 @@ $widthMediunCol: 520px;
 @media (max-width: 800px){
     .ankets-container .anket-item .first-row {
         flex-wrap: wrap;
+        align-items: flex-start;
     }
     .ankets-container .anket-item .alert-container {
         padding-top: 10px;
