@@ -1,6 +1,6 @@
 $fontPage: Arial, Helvetica, sans-serif;
 $widthMediunCol: 520px;
-
+$green: #009239;
 .search-container {
     padding-top: 15px;
     padding-bottom: 20px;
@@ -30,7 +30,7 @@ $widthMediunCol: 520px;
             padding: 10px 15px;
         }
         .btn-search {
-            background: #009239;
+            background: $green;
             border-radius: 10px;
             font-family: $fontPage;
             font-weight: bold;
@@ -101,7 +101,7 @@ $widthMediunCol: 520px;
             color: #BEBEBE;
         }
         .btn-answer {
-            border: 2px solid #009239;
+            border: 2px solid $green;
             border-radius: 10px;
             padding: 10px 25px;
             font-family: $fontPage;
@@ -109,7 +109,7 @@ $widthMediunCol: 520px;
             font-weight: bold;
             font-size: 15px;
             line-height: 17px;
-            color: #009239;
+            color: $green;
             display: inline-block;
             cursor: pointer;
             position: absolute;
@@ -176,7 +176,7 @@ $widthMediunCol: 520px;
             text-decoration: none;
             &.active {
                 .icon {
-                    background: #009239;
+                    background: $green;
                 }
             }
             .icon {
@@ -416,6 +416,25 @@ $widthMediunCol: 520px;
             .input-col {
                 width: 100%;
                 padding-right: 25px;
+                select {
+                    width: 100%;
+                }
+                .select2-container--default .select2-selection--multiple .select2-selection__choice {
+                    border: 1px solid $green;
+                    background: transparent;
+                    border: none;
+                    font-family: $fontPage;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #605A5A;
+                    outline: none;
+                }
+                .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+                    border-color: $green;
+                    border: none;
+                }
                 input[type=text] {
                     width: 100%;
                     border: 1px solid #C5C5C5;
@@ -432,7 +451,7 @@ $widthMediunCol: 520px;
                 }
             }
             .btn-submit {
-                background: #009239;
+                background: $green;
                 border-radius: 10px;
                 outline: none;
                 border: none;
@@ -636,7 +655,7 @@ $widthMediunCol: 520px;
             }
       
             .btn-submit {
-                background: #009239;
+                background: $green;
                 border-radius: 10px;
                 outline: none;
                 border: none;

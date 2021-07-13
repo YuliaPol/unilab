@@ -12,6 +12,10 @@ jQuery(function ($) {
             $(this).fadeOut(300);
             $(this).parents('.anket-box').find('.tag-form').fadeIn(300);
         });
-        
+        $(".tag-select").select2({
+            placeholder: "Выберите причину",
+            allowClear: true,
+            width: '100%'
+        });
     });
 });
