@@ -50,7 +50,7 @@ jQuery(function ($) {
         $('.field-filter-item').find('.help-block').after('<div class="select-caret"></div>');
 
         
-        $('select#filter-item').change(function () {
+        $('select.input-sm').change(function () {
             $("#selector-filter").submit();
 
             let attribute = $(this).data('attribute');
@@ -65,21 +65,53 @@ jQuery(function ($) {
             $("#selector-filter").submit()
         });
 
-        jQuery(function ($) {
-            let preloaded = [
-                {id: 1, src: '../img/picture-example.jpg'},
-                {id: 2, src: '../img/picture-example.jpg'},
-                {id: 3, src: '../img/picture-example.jpg'},
-            ];
-            $('.input-images').imageUploader({
-                label: 'Перетащите картинку сюда',
-                preloaded: preloaded
-            });
-        });
+        let image1_upload = $('#image1_upload').val() ? '../runtime-image/' + $('#image1_upload').val() : '';
+        let image2_upload = $('#image2_upload').val() ? '../runtime-image/' + $('#image2_upload').val() : '';
+        let image3_upload = $('#image3_upload').val() ? '../runtime-image/' + $('#image3_upload').val() : '';
+        let preloaded = [];
+        if (image1_upload) {
+            jQuery(function ($) {
+                if (image1_upload) {
+                    preloaded = [
+                        {id: 1, src: image1_upload},
+                    ];
+                }
+                if (image2_upload) {
+                    preloaded = [
+                        {id: 1, src: image1_upload},
+                        {id: 2, src: image2_upload},
+                    ];
+                }
+                if (image3_upload) {
+                    preloaded = [
+                        {id: 1, src: image1_upload},
+                        {id: 2, src: image2_upload},
+                        {id: 3, src: image3_upload},
+                    ];
+                }
 
-        $('.tab-label').on('click', function(){
-            $('#tab_label').html('/ ' + $(this).text());
-        });
+                $('.input-images').imageUploader({
+                    label: 'Перетащите картинку сюда',
+                    preloaded: preloaded
+                });
+            });
+        } else {
+            jQuery(function ($) {
+                let preloaded = [
+                    {id: 1, src: '../img/picture-example.jpg'},
+                    {id: 2, src: '../img/picture-example.jpg'},
+                    {id: 3, src: '../img/picture-example.jpg'},
+                ];
+                $('.input-images').imageUploader({
+                    label: 'Перетащите картинку сюда',
+                    preloaded: preloaded
+                });
+            });
+        }
+
+        
+
+        
     
     });
 
@@ -262,6 +294,13 @@ jQuery(function ($) {
     });
 
     $('button#to-comment-button').click(function (event) {
+        $('.chat-container').fadeIn();
+        $('.about-user-opened-tab').hide();
+        $('.tag-container').hide();
+
+        $('.tab-element').css('border-bottom', '1px solid #ECECEC');
+        $('.tab-element.chat-tab').css('border-bottom', '3px solid #009239');
+        
         event.preventDefault(); // 1
         $('.answer-box').removeClass('hide');
         $('.answer-box').addClass('show');
@@ -269,6 +308,22 @@ jQuery(function ($) {
         $("html, body").animate({
             scrollTop: $(document).height()
         }, 1200);
+
+        $('button#to-comment-button-tab').removeClass('show');
+        $('button#to-comment-button-tab').addClass('hide');
+    });
+
+    $('button#to-comment-button-tab').click(function (event) {
+        event.preventDefault(); // 1
+        $('.answer-box').removeClass('hide');
+        $('.answer-box').addClass('show');
+
+        $("html, body").animate({
+            scrollTop: $(document).height()
+        }, 1200);
+
+        $('button#to-comment-button-tab').removeClass('show');
+        $('button#to-comment-button-tab').addClass('hide');
     });
 
     $('button#to-work-button').click(function (event) {
@@ -389,9 +444,97 @@ jQuery(function ($) {
     //     $('#countdown-1').timeTo('reset');
     // });
 
-
+    $('#arbitration-button-yes').on('click', function () {
+        $("#arbitration_finale").val('1');
+        $("#arbitration").submit();
+    });
+    $('#arbitration-button-no').on('click', function () {
+        $("#arbitration_finale").val('2');
+        $("#arbitration").submit();
+    });
     
-    
+    $('button#arbitration-button').click(function (event) {
+        $('.arbitration-container').fadeIn();
+        $('.about-user-opened-tab').hide();
+        $('.tag-container').hide();
+        $('.chat-container').hide();
 
+        $('.tab-element').css('border-bottom', '1px solid #ECECEC');
+        $('.tab-element.arbitration-tab').css('border-bottom', '3px solid #009239');
+        
+        event.preventDefault(); // 1
+        $('.arbitration-box').removeClass('hide');
+        $('.arbitration-box').addClass('show');
+
+        $("html, body").animate({
+            scrollTop: $(document).height()
+        }, 1200);
+
+        $('button#arbitration-button-tab').removeClass('show');
+        $('button#arbitration-button-tab').addClass('hide');
+    });
+
+    $('button#arbitration-button-tab').click(function (event) {
+        event.preventDefault(); // 1
+        $('.arbitration-box').removeClass('hide');
+        $('.arbitration-box').addClass('show');
+
+        $("html, body").animate({
+            scrollTop: $(document).height()
+        }, 1200);
+
+        $('button#arbitration-button-tab').removeClass('show');
+        $('button#arbitration-button-tab').addClass('hide');
+    });
+
+
+    $('.tab-label').on('click', function(){
+        $('#tab_label').html('/ ' + $(this).text());
+    });
+
+    let pathname = window.location.pathname;
+    let path_array = pathname.split('/');
+    let href = path_array[2];
+
+    switch(href) {
+        case '':  
+            $('.treeview-menu').find('li').removeClass('highlight');
+            $('li#review').addClass('highlight');
+          break;
+        case 'review':  
+            $('.treeview-menu').find('li').removeClass('highlight');
+            $('li#review').addClass('highlight');
+          break;
+        case 'dashboard':  
+            $('.treeview-menu').find('li').removeClass('highlight');
+            $('li#dashboard').addClass('highlight');
+          break;
+        case 'branches':  
+            $('.treeview-menu').find('li').removeClass('highlight');
+            $('li#branches').addClass('highlight');
+          break;
+        case 'source-type':  
+            $('.treeview-menu').find('li').removeClass('highlight');
+            $('li#source_type').addClass('highlight');
+          break;
+        case 'user':  
+            $('.treeview-menu').find('li').removeClass('highlight');
+            $('li#user').addClass('highlight');
+          break;
+        case 'import':  
+            $('.treeview-menu').find('li').removeClass('highlight');
+            $('li#import').addClass('highlight');
+          break;
+        default:
+            $('.treeview-menu').find('li').removeClass('highlight');
+            $('li#review').addClass('highlight');
+          break;
+    }
+
+
+    // $('.treeview-menu').find('li').on('click', function(){
+    //     $('.treeview-menu').find('li').removeClass('highlight');
+    //     $(this).addClass('highlight');
+    // });
 
 });

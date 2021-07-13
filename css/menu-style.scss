@@ -480,6 +480,53 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                 margin-bottom: 2px !important;
                 border-bottom: 1px solid #BEBEBE;
             }
+            .form-control.select2-hidden-accessible {
+                display: none;
+            }
+            .select2-container {
+                margin-left: -1px;
+                margin-right: -1px;
+                width: calc(100% + 2px) !important;
+                & ~ .help-block {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+            .select2-container .select2-selection--single .select2-selection__rendered {
+                font-size: 15px;
+                line-height: 17px;
+                color: #000000;
+            }
+            .select2-container .select2-selection--single {
+                border: none !important;
+                background: transparent;
+                width: 100%;
+                max-width: calc(100% - 10px) !important;
+                border: none;
+                box-shadow: none;
+               
+            }
+            .select2-container--krajee .select2-selection--single .select2-selection__arrow {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 10px;
+                height: 10px;
+                background: url(./../img/arrow-select.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                transition: transform 0.3s ease;
+                pointer-events: none;
+                border: none;
+                b {
+                    display: none;
+                }
+            }
+            .select2-container--krajee.select2-container--open .select2-selection--single .select2-selection__arrow {
+                transform: rotate(180deg);
+            }
             input,select {
                 border-color: rgba(0, 0, 0, 0);
                 padding: 0px !important;
@@ -496,26 +543,31 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                 outline: none;
                 box-shadow: none;
             }
-            .drp-container-selectdata {
+            .drp-container {
                 width: 100%;
                 input:focus {
-                    & ~ .select-caret {
-                        transform: rotate(180deg);
+                    & ~ .help-block {
+                        &::after {
+                            transform: rotate(180deg);
+                        }
                     }
                 }
-                .select-caret {
-                    position: absolute;
-                    bottom: 12px;
-                    right: 10px;
-                    width: 10px;
-                    height: 10px;
-                    background: url(./../img/arrow-select.png);
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 100%;
-                    transition: transform 0.3s ease;
-                    z-index: 100;
-                    pointer-events: none;
+                .help-block {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        width: 10px;
+                        height: 10px;
+                        background: url(./../img/arrow-select.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 100%;
+                        transition: transform 0.3s ease;
+                        z-index: 100;
+                        pointer-events: none;
+                    }
                 }
             }
             .form-group {
@@ -532,23 +584,47 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                     display: none;
                 }
                 &:focus {
-                    ~ .select-caret {
-                        transform: rotate(180deg);
+                    & ~ .help-block {
+                        &::after {
+                            transform: rotate(180deg);
+                        }
                     }
                 }
-                ~ .select-caret {
-                    position: absolute;
-                    bottom: 12px;
-                    right: 10px;
-                    width: 10px;
-                    height: 10px;
-                    background: url(./../img/arrow-select.png);
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 100%;
-                    transition: transform 0.3s ease;
-                    pointer-events: none;
+                // &:focus {
+                //     ~ .select-caret {
+                //         transform: rotate(180deg);
+                //     }
+                // }
+                ~ .help-block {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        width: 10px;
+                        height: 10px;
+                        background: url(./../img/arrow-select.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 100%;
+                        transition: transform 0.3s ease;
+                        z-index: 100;
+                        pointer-events: none;
+                    }
                 }
+                // ~ .select-caret {
+                //     position: absolute;
+                //     top: 7px;
+                //     right: 10px;
+                //     width: 10px;
+                //     height: 10px;
+                //     background: url(./../img/arrow-select.png);
+                //     background-repeat: no-repeat;
+                //     background-position: center;
+                //     background-size: 100%;
+                //     transition: transform 0.3s ease;
+                //     pointer-events: none;
+                // }
             }
         }
     }
@@ -573,6 +649,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     .text-white {
         color: #ffffff;
     }
+}
+.select2-container--krajee .select2-dropdown {
+    border-color: #bebebe;
 }
 @media screen and (max-width: 1100px) {
     .container .content .breadcrumps,

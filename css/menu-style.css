@@ -86,15 +86,19 @@ body {
   height: 70px;
   width: calc(100% - 260px);
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
   -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   position: fixed;
   top: 0px;
@@ -119,7 +123,8 @@ body {
   background-image: url(../img/icon-menu.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  -webkit-background-size: contain;
+          background-size: contain;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -132,12 +137,15 @@ body {
 .container .header .navbar-user {
   padding-right: 50px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
+  -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
@@ -159,7 +167,8 @@ body {
   background-image: url(./../img/icon-mail.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
   position: relative;
 }
 
@@ -177,19 +186,23 @@ body {
 }
 
 .container .header .navbar-user .user {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
 }
 
 .container .header .navbar-user .user .user-wrapper {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
@@ -199,7 +212,8 @@ body {
   height: 45px;
   background-image: url(../img/icon-user.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
   background-color: #ffffff;
   border-radius: 50%;
 }
@@ -262,7 +276,8 @@ body {
   height: 17px;
   background-image: url(../img/icon-logout.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
   background-position: center;
   display: block;
   position: absolute;
@@ -277,6 +292,7 @@ body {
   -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.3s ease;
+  -o-transition: left 0.3s ease;
   transition: left 0.3s ease;
   z-index: 999;
   background-color: #ffffff;
@@ -322,6 +338,7 @@ body {
   line-height: 16px;
   color: #374448;
   -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   width: 100%;
   text-decoration: none;
@@ -340,6 +357,7 @@ body {
   padding: 0px;
   margin: 0px;
   -webkit-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
   transition: background 0.3s ease;
   padding-bottom: 5px;
 }
@@ -372,16 +390,20 @@ body {
   background: url(./../img/arrow.svg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  -webkit-background-size: contain;
+          background-size: contain;
   -webkit-transition: -webkit-transform 0.3s ease-in;
   transition: -webkit-transform 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
-  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in, -o-transform 0.3s ease-in;
   pointer-events: none;
 }
 
 .container .sidebar .menu .sidebar-nav li.treeview.hiddden-menu::after {
   -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+       -o-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
 
@@ -393,6 +415,7 @@ body {
   line-height: 16px;
   color: #374448;
   -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   width: 100%;
   text-decoration: none;
@@ -402,6 +425,8 @@ body {
 
 .container .sidebar .menu .sidebar-nav li.treeview .treeview-menu .active a {
   background: -webkit-gradient(linear, right top, left top, from(rgba(215, 177, 34, 0.19)), color-stop(0%, rgba(215, 177, 34, 0.39)), color-stop(99.48%, rgba(215, 177, 34, 0)), to(rgba(215, 177, 34, 0)));
+  background: -webkit-linear-gradient(right, rgba(215, 177, 34, 0.19) 0%, rgba(215, 177, 34, 0.39) 0%, rgba(215, 177, 34, 0) 99.48%, rgba(215, 177, 34, 0) 100%);
+  background: -o-linear-gradient(right, rgba(215, 177, 34, 0.19) 0%, rgba(215, 177, 34, 0.39) 0%, rgba(215, 177, 34, 0) 99.48%, rgba(215, 177, 34, 0) 100%);
   background: linear-gradient(270deg, rgba(215, 177, 34, 0.19) 0%, rgba(215, 177, 34, 0.39) 0%, rgba(215, 177, 34, 0) 99.48%, rgba(215, 177, 34, 0) 100%);
   border-right-color: #D7B122;
 }
@@ -410,6 +435,7 @@ body {
   width: calc(100% - 260px);
   margin-left: 260px;
   -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   background-color: #F2F2F2;
   margin-top: 70px;
@@ -473,13 +499,15 @@ body {
 
 .container .breadcrumps ul {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin: 0px;
   padding: 0px;
   list-style: none;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 .container .breadcrumps ul li {
@@ -511,7 +539,8 @@ body {
   width: 14px;
   height: 12px;
   background-image: url(../img/home.png);
-  background-size: 100%;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -524,6 +553,7 @@ body {
 
 .page-content .searh-row {
   -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
@@ -534,16 +564,20 @@ body {
 
 .page-content .filter-wrapper {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 25px;
@@ -575,6 +609,67 @@ body {
   border-bottom: 1px solid #BEBEBE;
 }
 
+.page-content .filter-wrapper .box .form-control.select2-hidden-accessible {
+  display: none;
+}
+
+.page-content .filter-wrapper .box .select2-container {
+  margin-left: -1px;
+  margin-right: -1px;
+  width: calc(100% + 2px) !important;
+}
+
+.page-content .filter-wrapper .box .select2-container ~ .help-block::after {
+  display: none;
+}
+
+.page-content .filter-wrapper .box .select2-container .select2-selection--single .select2-selection__rendered {
+  font-size: 15px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.page-content .filter-wrapper .box .select2-container .select2-selection--single {
+  border: none !important;
+  background: transparent;
+  width: 100%;
+  max-width: calc(100% - 10px) !important;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.page-content .filter-wrapper .box .select2-container--krajee .select2-selection--single .select2-selection__arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background: url(./../img/arrow-select.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: -o-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease, -o-transform 0.3s ease;
+  pointer-events: none;
+  border: none;
+}
+
+.page-content .filter-wrapper .box .select2-container--krajee .select2-selection--single .select2-selection__arrow b {
+  display: none;
+}
+
+.page-content .filter-wrapper .box .select2-container--krajee.select2-container--open .select2-selection--single .select2-selection__arrow {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .page-content .filter-wrapper .box input, .page-content .filter-wrapper .box select {
   border-color: rgba(0, 0, 0, 0);
   padding: 0px !important;
@@ -593,29 +688,34 @@ body {
           box-shadow: none;
 }
 
-.page-content .filter-wrapper .box .drp-container-selectdata {
+.page-content .filter-wrapper .box .drp-container {
   width: 100%;
 }
 
-.page-content .filter-wrapper .box .drp-container-selectdata input:focus ~ .select-caret {
+.page-content .filter-wrapper .box .drp-container input:focus ~ .help-block::after {
   -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-.page-content .filter-wrapper .box .drp-container-selectdata .select-caret {
+.page-content .filter-wrapper .box .drp-container .help-block::after {
+  content: "";
   position: absolute;
-  bottom: 12px;
+  top: 10px;
   right: 10px;
   width: 10px;
   height: 10px;
   background: url(./../img/arrow-select.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
+  -o-transition: -o-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease, -o-transform 0.3s ease;
   z-index: 100;
   pointer-events: none;
 }
@@ -638,25 +738,31 @@ body {
   display: none;
 }
 
-.page-content .filter-wrapper .box select:focus ~ .select-caret {
+.page-content .filter-wrapper .box select:focus ~ .help-block::after {
   -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-.page-content .filter-wrapper .box select ~ .select-caret {
+.page-content .filter-wrapper .box select ~ .help-block::after {
+  content: "";
   position: absolute;
-  bottom: 12px;
+  top: 10px;
   right: 10px;
   width: 10px;
   height: 10px;
   background: url(./../img/arrow-select.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
+  -o-transition: -o-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease, -o-transform 0.3s ease;
+  z-index: 100;
   pointer-events: none;
 }
 
@@ -671,6 +777,7 @@ body {
   text-decoration: none;
   border-radius: 20px 0px;
   -webkit-transition: all 0.50s ease;
+  -o-transition: all 0.50s ease;
   transition: all 0.50s ease;
   -webkit-box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.75);
           box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.75);
@@ -682,6 +789,10 @@ body {
 
 .scrollup .text-white {
   color: #ffffff;
+}
+
+.select2-container--krajee .select2-dropdown {
+  border-color: #bebebe;
 }
 
 @media screen and (max-width: 1100px) {

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link href="./css/style1.css" rel="stylesheet">
+    <link href="./css/my-styles.css" rel="stylesheet">
+    <link href="./css/image-uploader.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/my-styles.css" rel="stylesheet">
+    <link href="./css/timeTo.css" rel="stylesheet">
+    <link href="./css/menu-style.css" rel="stylesheet">
+    <link href="./css/ankets.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="navbar-aside">
+                <button type="button" class="btn-aside-menu toggle-sidebar">
+                </button>
+            </div>
+            <div class="navbar-user">
+                <div class="user">
+                    <div class="user-wrapper show-user-dropdown">
+                        <div class="icon-user"></div>
+                        <div class="user-name">admin</div>
+                    </div>
+                    <div class="dropdown-user">
+                        <ul>
+                            <li>
+                                <a class="logout " href="/admin/site/logout" data-method="post"><span
+                                        class="ti-power-off pr-2"></span> Выход </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="sidebar">
+            <div class="menu-sidebar">
+                <div class="logo">
+                    <a href="/admin">
+                        <img src="./img/logo.png" alt="Subways">
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul class="sidebar-nav treeview-menu">
+                            <li>
+                                <a href="./index.html">
+                                    <i class="fa fa-th"></i>
+                                    Ключевые показатели
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="/admin/review">
+                                    <i class="fa fa-star-half-o"></i>
+                                    Сводная информация
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="content">
+
+
+            <script src="https://www.amcharts.com/lib/4/core.js"></script>
+            <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+            <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+            <div class="breadcrumps">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th"></i> Главная</a> /
+                    </li>
+                    <li>
+                        <a href="#">Ключевые показатели</a> /
+                    </li>
+                    <li>
+                        Анкета
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page-content">
+
+
+
+
+                <form id="selector-filter" action="/admin/dashboard" method="get" data-pjax="1">
+                    <div class="filter-wrapper">
+                        <!-- блок выбора даты -->
+                        <div class="box">
+                            <h6>Период</h6>
+                            <div class="drp-container form-group field-reviewsearch-date">
+
+                                <input type="text" id="reviewsearch-date" class="form-control" name="ReviewSearch[date]"
+                                    value="13-04-2021 - 13-05-2021">
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Источник</h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm"
+                                    name="ReviewSearch[id_source_type]">
+                                    <option value="">Все</option>
+                                    <option value="1">Google maps</option>
+                                    <option value="2">Yandex Карты</option>
+                                    <option value="3">2GIS</option>
+                                    <option value="4">Facebook</option>
+                                    <option value="5">Одноклассники</option>
+                                    <option value="6">ВК</option>
+                                    <option value="7">Ютуб</option>
+                                    <option value="8">Официальный сайт SubWay</option>
+                                    <option value="9">Приложение SubWay</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h6>Тональность</h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-region">
+                                    <option value="">Все</option>
+                                    <option value="1">Тональность 1</option>
+                                    <option value="2">Тональность 2</option>
+                                    <option value="3">Тональность 3</option>
+                                    <option value="4">Тональность 4</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Регион </h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-region"
+                                    name="ReviewSearch[id_region]" data-attribute="region">
+                                    <option value="">Все</option>
+                                    <option value="1">Сибирь</option>
+                                    <option value="2">Урал</option>
+                                    <option value="3">Москва</option>
+                                    <option value="4">Юг</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Менеджеру</h6>
+                            <div class="form-group field-filter-item">
+                                <select id="filter-item" class="form-control input-sm filter-dev_manager"
+                                    name="ReviewSearch[id_dev_manager]" data-attribute="dev_manager">
+                                    <option value="">Все</option>
+                                    <option value="21">Яна Стажилова</option>
+                                    <option value="26">Марина Тукшумская</option>
+                                    <option value="62">Светлана Баранова</option>
+                                    <option value="67">Кира Ананьина</option>
+                                    <option value="77">Ирина Виневцева</option>
+                                    <option value="86">Владимир Григоревский</option>
+                                    <option value="91">Анна Сорокина</option>
+                                    <option value="142">Ольга Смирнова</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h6>Управляющему</h6>
+                            <div class="form-group field-filter-item">
+                                <select id="filter-item" class="form-control input-sm filter-dev_manager"
+                                    name="ReviewSearch[id_dev_manager]" data-attribute="dev_manager">
+                                    <option value="">Все</option>
+                                    <option value="21">Яна Стажилова</option>
+                                    <option value="26">Марина Тукшумская</option>
+                                    <option value="62">Светлана Баранова</option>
+                                    <option value="67">Кира Ананьина</option>
+                                    <option value="77">Ирина Виневцева</option>
+                                    <option value="86">Владимир Григоревский</option>
+                                    <option value="91">Анна Сорокина</option>
+                                    <option value="142">Ольга Смирнова</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h6>Тема публикации
+
+                            </h6>
+                            <div class="form-group field-filter-item">
+
+                                <select id="filter-item" class="form-control input-sm filter-region">
+                                    <option value="">Все</option>
+                                    <option value="1">Тема 1</option>
+                                    <option value="2">Тема 2</option>
+                                    <option value="3">Тема 3</option>
+                                    <option value="4">Тема 4</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h6>Ответ сотрудника
+                            </h6>
+                            <div class="form-group field-filter-item">
+                                <select id="filter-item" class="form-control input-sm filter-region">
+                                    <option value="">Все</option>
+                                    <option value="1">Есть ответ</option>
+                                    <option value="2">Нет ответа</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                        <input type="hidden" value="" id="action_marker" name="action" />
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="main-wrapper">
+                <div class="content-wrapper">
+                    <div class="search-container">
+                        <form action="#">
+                            <h4 class="search-title">
+                                Поиск анкеты по региону
+                            </h4>
+                            <div class="search-row">
+                                <div class="input-search-col">
+                                    <input class="input-search" type="text" name="seacrh">
+                                </div>
+                                <div class="btn-search-col">
+                                    <input class="btn-search" type="submit" value="Поиск">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="ankets-container">
+                        <div class="ankets-list">
+                            <div class="anket-box">
+                                <div class="anket-item">
+                                    <div class="source-list">
+                                        <div class="source-item item maps-icon">
+                                            maps.google.com
+                                        </div>
+                                        <div class="item">
+                                            Россия, Московская обл
+                                        </div>
+                                    </div>
+                                    <div class="first-row">
+                                        <div class="left-col">
+                                            <div class="user-info">
+                                                <div class="user-icon"></div>
+                                                <div class="user-name">Иван Иванов</div>
+                                            </div>
+                                            <div class="anket-date">24.10.2020 / 12:40</div>
+                                        </div>
+                                        <div class="alert-container">
+                                            <div class="label-alert label-alert-new">Новый</div>
+                                        </div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="left-col">
+                                            <div class="stars-wrapper">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-empty"></div>
+                                                <div class="star-empty"></div>
+                                                <div class="star-empty"></div>
+                                            </div>
+                                            <div class="action-list">
+                                                <a href="#" class="list-item">
+                                                    Выбрать главным
+                                                    <div class="icon icon-make-main"></div>
+                                                </a>
+                                                <div class="list-item active">
+                                                    Ответ эксперта
+                                                    <div class="icon icon-experts-answer"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-col">
+                                            <div class="anket-text">
+                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna
+                                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea commodo consequat.
+                                            </div>
+                                            <div class="anket-rate">
+                                                <div class="label label-negative">Негативная</div>
+                                            </div>
+                                            <div class="label-list">
+                                                <div class="label label-blue">Качество товара</div>
+                                                <div class="label label-green">Чистота зала</div>
+                                                <div class="label label-orange">Другое</div>
+                                                <div class="add-tag">
+                                                    <div class="tooltip">Добавить тег</div>
+                                                </div>
+                                            </div>
+                                            <div class="tag-form">
+                                                <form action="#">
+                                                    <div class="form-add-tag">
+                                                        <div class="input-col">
+                                                            <input type="text" name="tagName">
+                                                        </div>
+                                                        <div class="btn-col">
+                                                            <input class="btn-submit" type="submit" value="Добавить">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="bottom-row">
+                                                <a href="#" class="bottom-item">
+                                                    <div class="icon icon-like"></div>
+                                                    <div class="count">0</div>
+                                                </a>
+                                                <div class="bottom-item item-">
+                                                    <div class="icon icon-message"></div>
+                                                    <div class="count">0</div>
+                                                </div>
+                                                <div class="bottom-item">
+                                                    <div class="icon icon-arrows"></div>
+                                                    <div class="count">0</div>
+                                                </div>
+                                            </div>
+                                            <div class="btn-answer answer-for-anket">
+                                                Ответить
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="anket-answer">
+                                    <div class="info-row">
+                                        <div class="left-col">
+                                            <div class="user-info">
+                                                <div class="user-icon"></div>
+                                                <div class="user-name">SubWay</div>
+                                            </div>
+                                        </div>
+                                        <div class="right-col">
+                                            <div class="answer-text">
+                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                commodo consequat.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="anket-form">
+                                    <div class="info-row">
+                                        <div class="left-col">
+                                            <div class="user-info">
+                                                <div class="user-icon"></div>
+                                                <div class="user-name">SubWay</div>
+                                            </div>
+                                        </div>
+                                        <div class="right-col">
+                                            <form action="#">
+                                                <div class="form-response">
+                                                    <div class="input-col">
+                                                        <textarea name="abnswer" placeholder="Ваш ответ"></textarea>
+                                                    </div>
+                                                    <div class="btn-col">
+                                                        <input class="btn-submit" type="submit" value="Отправить">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="anket-box">
+                                <div class="anket-item">
+                                    <div class="source-list">
+                                        <div class="source-item item yandex-icon">
+                                            Yandex Карты  
+                                        </div>
+                                        <div class="item">
+                                            Россия, Московская обл
+                                        </div>
+                                    </div>
+                                    <div class="first-row">
+                                        <div class="left-col">
+                                            <div class="user-info">
+                                                <div class="user-icon"></div>
+                                                <div class="user-name">Иван Иванов</div>
+                                            </div>
+                                            <div class="anket-date">24.10.2020 / 12:40</div>
+                                        </div>
+                                        <div class="alert-container">
+                                            <div class="label-alert label-alert-closed">Закрыто</div>
+                                        </div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="left-col">
+                                            <div class="stars-wrapper">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-empty"></div>
+                                                <div class="star-empty"></div>
+                                            </div>
+                                            <div class="action-list">
+                                                <a href="#" class="list-item">
+                                                    Выбрать главным
+                                                    <div class="icon icon-make-main"></div>
+                                                </a>
+                                                <div class="list-item active">
+                                                    Ответ эксперта
+                                                    <div class="icon icon-experts-answer"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-col">
+                                            <div class="anket-text">
+                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna
+                                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea commodo consequat.
+                                            </div>
+                                            <div class="anket-rate">
+                                                <div class="label label-neutral">Нейтральная</div>
+                                            </div>
+                                            <div class="label-list">
+                                                <div class="label label-blue">Качество товара</div>
+                                                <div class="label label-green">Чистота зала</div>
+                                                <div class="label label-orange">Другое</div>
+                                                <div class="add-tag">
+                                                    <div class="tooltip">Добавить тег</div>
+                                                </div>
+                                            </div>
+                                            <div class="tag-form">
+                                                <form action="#">
+                                                    <div class="form-add-tag">
+                                                        <div class="input-col">
+                                                            <input type="text" name="tagName">
+                                                        </div>
+                                                        <div class="btn-col">
+                                                            <input class="btn-submit" type="submit" value="Добавить">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="bottom-row">
+                                                <a href="#" class="bottom-item">
+                                                    <div class="icon icon-like"></div>
+                                                    <div class="count">0</div>
+                                                </a>
+                                                <div class="bottom-item item-">
+                                                    <div class="icon icon-message"></div>
+                                                    <div class="count">0</div>
+                                                </div>
+                                                <div class="bottom-item">
+                                                    <div class="icon icon-arrows"></div>
+                                                    <div class="count">0</div>
+                                                </div>
+                                            </div>
+                                            <div class="btn-answer answer-for-anket">
+                                                Ответить
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="anket-form">
+                                    <div class="info-row">
+                                        <div class="left-col">
+                                            <div class="user-info">
+                                                <div class="user-icon"></div>
+                                                <div class="user-name">SubWay</div>
+                                            </div>
+                                        </div>
+                                        <div class="right-col">
+                                            <form action="#">
+                                                <div class="form-response">
+                                                    <div class="input-col">
+                                                        <textarea name="abnswer" placeholder="Ваш ответ"></textarea>
+                                                    </div>
+                                                    <div class="btn-col">
+                                                        <input class="btn-submit" type="submit" value="Отправить">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="anket-box">
+                                <div class="anket-item">
+                                    <div class="source-list">
+                                        <div class="source-item item subway-icon">
+                                            Официальный сайт SubWay
+                                        </div>
+                                        <div class="item">
+                                            Россия, Московская обл
+                                        </div>
+                                    </div>
+                                    <div class="first-row">
+                                        <div class="left-col">
+                                            <div class="user-info">
+                                                <div class="user-icon"></div>
+                                                <div class="user-name">Иван Иванов</div>
+                                            </div>
+                                            <div class="anket-date">24.10.2020 / 12:40</div>
+                                        </div>
+                                        <div class="alert-container">
+                                            <div class="label-alert label-alert-expired">Просрочено</div>
+                                        </div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="left-col">
+                                            <div class="stars-wrapper">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                            </div>
+                                            <div class="action-list">
+                                                <a href="#" class="list-item">
+                                                    Выбрать главным
+                                                    <div class="icon icon-make-main"></div>
+                                                </a>
+                                                <div class="list-item active">
+                                                    Ответ эксперта
+                                                    <div class="icon icon-experts-answer"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-col">
+                                            <div class="anket-text">
+                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna
+                                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea commodo consequat.
+                                            </div>
+                                            <div class="anket-rate">
+                                                <div class="label label-positive">Позитивная</div>
+                                            </div>
+                                            <div class="label-list">
+                                                <div class="label label-blue">Качество товара</div>
+                                                <div class="label label-green">Чистота зала</div>
+                                                <div class="label label-orange">Другое</div>
+                                                <div class="add-tag">
+                                                    <div class="tooltip">Добавить тег</div>
+                                                </div>
+                                            </div>
+                                            <div class="tag-form">
+                                                <form action="#">
+                                                    <div class="form-add-tag">
+                                                        <div class="input-col">
+                                                            <input type="text" name="tagName">
+                                                        </div>
+                                                        <div class="btn-col">
+                                                            <input class="btn-submit" type="submit" value="Добавить">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="bottom-row">
+                                                <a href="#" class="bottom-item">
+                                                    <div class="icon icon-like"></div>
+                                                    <div class="count">0</div>
+                                                </a>
+                                                <div class="bottom-item item-">
+                                                    <div class="icon icon-message"></div>
+                                                    <div class="count">0</div>
+                                                </div>
+                                                <div class="bottom-item">
+                                                    <div class="icon icon-arrows"></div>
+                                                    <div class="count">0</div>
+                                                </div>
+                                            </div>
+                                            <div class="btn-answer answer-for-anket">
+                                                Ответить
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="anket-form">
+                                    <div class="info-row">
+                                        <div class="left-col">
+                                            <div class="user-info">
+                                                <div class="user-icon"></div>
+                                                <div class="user-name">SubWay</div>
+                                            </div>
+                                        </div>
+                                        <div class="right-col">
+                                            <form action="#">
+                                                <div class="form-response">
+                                                    <div class="input-col">
+                                                        <textarea name="abnswer" placeholder="Ваш ответ"></textarea>
+                                                    </div>
+                                                    <div class="btn-col">
+                                                        <input class="btn-submit" type="submit" value="Отправить">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="scrollup">
+        <a href="#" class="text-white"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="./js/image-uploader.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/script-companies.js"></script>
+    <script src="./js/jquery.time-to.min.js"></script>
+    <script src="./js/ankets.js"></script>
+    <script>
+        $('#reviewsearch-date').daterangepicker({
+            opens: 'rigth',
+            locale: {
+                format: 'DD-MM-YYYY',
+                applyLabel: 'Принять',
+                cancelLabel: 'Отмена',
+                invalidDateLabel: 'Выберите дату',
+                daysOfWeek: ['Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс', 'Пн'],
+                monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                firstDay: 1
+            },
+        }, function (start, end, label) {
+        });
+    </script>
+</body>
+
+</html>

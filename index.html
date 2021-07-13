@@ -786,16 +786,16 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Тема 1</td>
-                                        <td>24</td>
+                                        <td> </td>
+                                        <td> </td>
                                     </tr>
                                     <tr>
-                                        <td>Тема 2</td>
-                                        <td>56</td>
+                                        <td> </td>
+                                        <td> </td>
                                     </tr>
                                     <tr>
-                                        <td>Тема 3</td>
-                                        <td>12</td>
+                                        <td> </td>
+                                        <td> </td>
                                     </tr>
                                     <tr>
                                         <td>Тема 4</td>
@@ -1326,10 +1326,15 @@
             orangeGradientFill.addColorStop(0, 'rgba(254, 152, 68, 0.5)');
             orangeGradientFill.addColorStop(1, 'rgba(252, 207, 170, 0.095)');
 
+            var dataset1 = [0, 0, 0, 0, 0,];
+            var dataset2 = [0, 0, 0, 1, 0,];
+            var dataset3 = [0, 0, 0, 0, 0,];
+
+            var labels = ["12.05", "13.05", "14.05", "15.05", "16.05", "17.05", "18.05"];
             var linesChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ["12.05", "13.05", "14.05", "15.05", "16.05", "17.05", "18.05"],
+                    labels: labels,
                     datasets: [
                         {
                             label: "",
@@ -1345,7 +1350,7 @@
                             fill: true,
                             backgroundColor: redGradientFill,
                             borderWidth: 4,
-                            data: [10, 40, 35, 62, 13, 87, 41],
+                            data: dataset1,
                         },
                         {
                             label: "",
@@ -1361,7 +1366,7 @@
                             fill: true,
                             backgroundColor: greenGradientFill,
                             borderWidth: 4,
-                            data: [23, 58, 41, 65, 70, 70, 42]
+                            data: dataset2
                         },
                         {
                             label: "",
@@ -1377,7 +1382,7 @@
                             fill: true,
                             backgroundColor: orangeGradientFill,
                             borderWidth: 4,
-                            data: [59, 67, 32, 20, 18, 37, 28]
+                            data: dataset3
                         },
                     ]
                 },
@@ -1393,11 +1398,10 @@
                                 fontStyle: "bold",
                                 fontSize: 13,
                                 beginAtZero: true,
-                                suggestedMax: 90,
+                                suggestedMax: 1,
                                 suggestedMin: 0,
                                 min: 0,
-                                max: 90,
-                                stepSize: 10,
+                                stepSize: 1,
                             },
                             gridLines: {
                                 drawTicks: true,
@@ -1409,12 +1413,44 @@
                                 display: true
                             },
                             ticks: {
+                                autoSkip: true,
                                 padding: 20,
                                 fontColor: "rgba(0,0,0,0.5)",
                                 fontStyle: "bold",
                                 fontSize: 13,
-                            }
+                            },
                         }]
+                    },
+                    tooltips: {
+                        mode: 'nearest',
+                        // backgroundColor: borderColor,
+                        titleFontSize: 8,
+                        titleAlign: 'center',
+                        position: 'average',
+                        xPadding: 10,
+                        yPadding: 5,
+                        cornerRadius: 10,
+                        displayColors: false,
+                        callbacks: {
+                            title: function() {},
+                            label: function(tooltipItem, data) {
+                                var values = data.datasets[tooltipItem.datasetIndex].data;
+                                var total = 0;
+                                for(let i = 0; i < values.length; i++){
+                                    total += parseInt(values[i]);
+                                }
+                                var percent;
+                                if(parseInt(data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index])>0){
+                                    percent = Math.round((100/total)*data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]);
+                                }
+                                else {
+                                    percent = 0;
+                                }
+                                var label = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || '';
+                                label =  percent + '% / '+ label + ' шт';
+                                return label;
+                            }
+                        }
                     },
                     plugins: {
                         datalabels: {
