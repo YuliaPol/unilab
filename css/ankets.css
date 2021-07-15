@@ -1,3 +1,116 @@
+.filter-wrapper .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: transparent;
+  border: none;
+}
+
+.filter-wrapper .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  border: none;
+}
+
+.filter-wrapper .select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
+.filter-wrapper .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
+.filter-wrapper .select2-container--default .select2-selection--multiple {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.filter-wrapper .select2-selection--multiple {
+  padding-right: 15px;
+}
+
+.filter-wrapper .select2-selection--multiple:before {
+  content: "";
+  position: absolute;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background: url(./../img/arrow-select.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
+
+.filter-wrapper .select2-container--default .select2-selection--single .select2-selection__arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background: url(./../img/arrow-select.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: -o-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease, -o-transform 0.3s ease;
+  pointer-events: none;
+  border: none;
+}
+
+.filter-wrapper .select2-container--default .select2-selection--single .select2-selection__arrow b {
+  display: none;
+}
+
+.filter-wrapper .select2-container--default .select2-selection--single .select2-selection__arrow .select2-container--open .select2-selection--single .select2-selection__arrow {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.serch-sort-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.serch-sort-row .sort-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.serch-sort-row .sort-container .sort-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #605A5A;
+  padding-right: 10px;
+}
+
+.serch-sort-row .sort-container select {
+  width: 160px;
+  max-width: 100%;
+}
+
 .search-container {
   padding-top: 15px;
   padding-bottom: 20px;
@@ -241,7 +354,7 @@
 
 .ankets-container .action-list .list-item {
   display: inline-block;
-  width: 125px;
+  width: 150px;
   max-width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
@@ -861,6 +974,23 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .serch-sort-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .serch-sort-row .search-container {
+    width: 100%;
+  }
+}
+
 @media (max-width: 992px) {
   .ankets-container .info-row {
     -webkit-box-orient: vertical;
@@ -970,6 +1100,23 @@
   }
   .input-search-col {
     width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .serch-sort-row .sort-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .serch-sort-row .sort-container .sort-title {
+    padding-bottom: 10px;
   }
 }
 /*# sourceMappingURL=ankets.css.map */

@@ -8,6 +8,8 @@
     <title>Document</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/select2-addl.min.css">
+    <link rel="stylesheet" href="./css/select2-krajee.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="https://subway-feedback.ru/admin/assets/d5a54bb3/css/select2-krajee.min.css">
     <link href="./css/style1.css" rel="stylesheet">
@@ -17,7 +19,7 @@
     <link href="./css/my-styles.css" rel="stylesheet">
     <link href="./css/timeTo.css" rel="stylesheet">
     <link href="./css/menu-style.css" rel="stylesheet">
-    <link href="./css/ankets.css?58490358" rel="stylesheet">
+    <link href="./css/ankets.css?675435643567" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
 </head>
 
@@ -110,7 +112,7 @@
                             <div class="form-group field-filter-item-franchisee">
 
                                 <select id="filter-item-franchisee "
-                                    class="form-control filter-franchisee filter-select2">
+                                    class="form-control filter-franchisee filter-select2" multiple="multiple">
                                     <option value="" data-select2-id="2">Все</option>
                                     <option value="83">Адигезалов Роман</option>
                                     <option value="17">Андрианов Павел / Гургов Юрий</option>
@@ -175,8 +177,8 @@
                             <h6>Регион </h6>
                             <div class="form-group field-filter-item">
 
-                                <select id="filter-item" class="form-control input-sm filter-region"
-                                    name="ReviewSearch[id_region]" data-attribute="region">
+                                <select  class="form-control input-sm filter-region filter-select2"
+                                    name="ReviewSearch[id_region]" data-attribute="region" multiple="multiple">
                                     <option value="">Все</option>
                                     <option value="3">Москва</option>
                                     <option value="5">Санкт-Петербург</option>
@@ -195,8 +197,8 @@
                             <h6>Город </h6>
                             <div class="form-group field-filter-item-city">
 
-                                <select id="filter-item-city" class="form-control input-sm filter-city"
-                                    name="ReviewSearch[id_city]" data-attribute="city">
+                                <select id="filter-item-city" class="form-control input-sm filter-city filter-select2"
+                                    name="ReviewSearch[id_city]" data-attribute="city" multiple>
                                     <option value="">Все</option>
                                     <option value="2">Екатеринбург</option>
                                     <option value="3">Москва</option>
@@ -216,7 +218,7 @@
                             <div class="form-group field-filter-item-office">
 
                                 <select id="filter-item-office"
-                                    class="form-control input-sm filter-office filter-select2">
+                                    class="form-control input-sm filter-office filter-select2" multiple>
                                     <option value="" data-select2-id="4">Все</option>
                                     <option value="1">Анохина ул., дом 88</option>
                                     <option value="2">Бутина ул, дом 30</option>
@@ -373,14 +375,23 @@
                                 <div class="help-block"></div>
                             </div>
                         </div>
+                        <!-- блок выбора даты -->
+                        <div class="box">
+                            <h6>Период</h6>
+                            <div class="drp-container form-group field-reviewsearch-date">
 
+                                <input type="text" id="reviewsearch-date" class="form-control" name="ReviewSearch[date]"
+                                    value="13-04-2021 - 13-05-2021">
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
                         <div class="box">
                             <h6>Номер ресторана </h6>
-                            <div class="form-group field-filter-item-branche filter-select2">
+                            <div class="form-group field-filter-item-branche">
 
-                                <select id="filter-item-branche"
-                                    class="form-control input-sm filter-branche">
-                                    <option value="" data-select2-id="6">Все</option>
+                                <select  class="form-control input-sm filter-branche filter-select2" multiple="multiple">
+                                    <option value="all">Все</option>
                                     <option value="119">14992</option>
                                     <option value="23">25446</option>
                                     <option value="30">26347</option>
@@ -537,9 +548,9 @@
                             <div class="form-group field-filter-item-senior_reg_consultant">
 
                                 <select id="filter-item-senior_reg_consultant"
-                                    class="form-control input-sm filter-senior_reg_consultant"
+                                    class="form-control input-sm filter-senior_reg_consultant filter-select2"
                                     name="ReviewSearch[id_senior_reg_consultant]"
-                                    data-attribute="senior_reg_consultant">
+                                    data-attribute="senior_reg_consultant" multiple>
                                     <option value="">Все</option>
                                     <option value="64">Анастасия Плугатырева</option>
                                     <option value="146">Елена Шпота</option>
@@ -557,8 +568,8 @@
                             <div class="form-group field-filter-item-reg_consultant">
 
                                 <select id="filter-item-reg_consultant"
-                                    class="form-control input-sm filter-reg_consultant"
-                                    name="ReviewSearch[id_reg_consultant]" data-attribute="reg_consultant">
+                                    class="form-control input-sm filter-reg_consultant filter-select2"
+                                    name="ReviewSearch[id_reg_consultant]" data-attribute="reg_consultant" multiple>
                                     <option value="">Все</option>
                                     <option value="143">Анастасия Безрукова</option>
                                     <option value="18">Анна Евстигнеева</option>
@@ -581,8 +592,8 @@
                             <h6>BD</h6>
                             <div class="form-group field-filter-item-bd_manager">
 
-                                <select id="filter-item-bd_manager" class="form-control input-sm filter-bd_manager"
-                                    name="ReviewSearch[id_bd_manager]" data-attribute="bd_manager">
+                                <select id="filter-item-bd_manager" class="form-control input-sm filter-bd_manager filter-select2"
+                                    name="ReviewSearch[id_bd_manager]" data-attribute="bd_manager" multiple>
                                     <option value="">Все</option>
                                     <option value="91">Анна Сорокина</option>
                                     <option value="86">Владимир Григоревский</option>
@@ -599,22 +610,11 @@
                             </div>
                         </div>
 
-                        <!-- блок выбора даты -->
-                        <div class="box">
-                            <h6>Период</h6>
-                            <div class="drp-container form-group field-reviewsearch-date">
-
-                                <input type="text" id="reviewsearch-date" class="form-control" name="ReviewSearch[date]"
-                                    value="13-04-2021 - 13-05-2021">
-
-                                <div class="help-block"></div>
-                            </div>
-                        </div>
                         <div class="box">
                             <h6>Валидация</h6>
                             <div class="form-group field-filter-item-validator">
 
-                                <select id="filter-item-validator" class="form-control input-sm"
+                                <select id="filter-item-validator" class="form-control input-sm filter-select2"
                                     name="ReviewSearch[validate]">
                                     <option value="">Все</option>
                                     <option value="1">Валидированные</option>
@@ -629,8 +629,8 @@
                             <h6>Тип источника</h6>
                             <div class="form-group field-filter-item-source_type">
 
-                                <select id="filter-item-source_type" class="form-control input-sm"
-                                    name="ReviewSearch[id_source_type]">
+                                <select id="filter-item-source_type" class="form-control input-sm filter-select2"
+                                    name="ReviewSearch[id_source_type]" multiple>
                                     <option value="">Все</option>
                                     <option value="1">Google maps</option>
                                     <option value="2">Yandex Карты</option>
@@ -652,8 +652,8 @@
                             <h6>Статус</h6>
                             <div class="form-group field-filter-item-status">
 
-                                <select id="filter-item-status" class="form-control input-sm"
-                                    name="ReviewSearch[status]">
+                                <select id="filter-item-status" class="form-control input-sm filter-select2"
+                                    name="ReviewSearch[status]" multiple>
                                     <option value="">Все</option>
                                     <option value="11">Прибыл</option>
                                     <option value="1">Новый</option>
@@ -667,13 +667,57 @@
                             </div>
                         </div>
                         <div class="box">
-                            <h6>Ответ сотрудника
+                            <h6>Наличие ответа
                             </h6>
                             <div class="form-group field-filter-item">
-                                <select id="filter-item" class="form-control input-sm filter-region">
+                                <select class="form-control input-sm filter-region filter-select2">
                                     <option value="">Все</option>
                                     <option value="1">Есть ответ</option>
                                     <option value="2">Нет ответа</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h6>Оценка
+                            </h6>
+                            <div class="form-group field-filter-item">
+                                <select class="form-control input-sm filter-region filter-select2" multiple>
+                                    <option value="0">Все</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h6>Тональность
+                            </h6>
+                            <div class="form-group field-filter-item">
+                                <select   class="form-control input-sm filter-region filter-select2" multiple>
+                                    <option value="0">Все</option>
+                                    <option value="1">Негативная</option>
+                                    <option value="2">Нейтральная</option>
+                                    <option value="2">Позитивная</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h6>Тема отзыва
+                            </h6>
+                            <div class="form-group field-filter-item">
+                                <select id="filter-item" class="form-control input-sm filter-region filter-select2" multiple>
+                                    <option value="0">Все</option>
+                                    <option value="1">Тема 1</option>
+                                    <option value="2">Тема 2</option>
+                                    <option value="2">Тема 3</option>
                                 </select>
 
                                 <div class="help-block"></div>
@@ -692,20 +736,33 @@
 
             <div class="main-wrapper">
                 <div class="content-wrapper">
-                    <div class="search-container">
-                        <form action="#">
-                            <h4 class="search-title">
-                                Поиск анкеты по региону
+                    <div class="serch-sort-row">
+                        <div class="search-container">
+                            <form action="#">
+                                <h4 class="search-title">
+                                    Поиск анкеты по региону
+                                </h4>
+                                <div class="search-row">
+                                    <div class="input-search-col">
+                                        <input class="input-search" type="text" name="seacrh">
+                                    </div>
+                                    <div class="btn-search-col">
+                                        <input class="btn-search" type="submit" value="Поиск">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="sort-container">
+                            <h4 class="sort-title">
+                                Сортировка
                             </h4>
-                            <div class="search-row">
-                                <div class="input-search-col">
-                                    <input class="input-search" type="text" name="seacrh">
-                                </div>
-                                <div class="btn-search-col">
-                                    <input class="btn-search" type="submit" value="Поиск">
-                                </div>
+                            <div class="sort-value">
+                                <select name="sort" class="filter-select2">
+                                    <option value="1">Сначала новые</option>
+                                    <option value="2">Сначала старые</option>
+                                </select>
                             </div>
-                        </form>
+                        </div>
                     </div>
                     <div class="ankets-container">
                         <div class="ankets-list">
@@ -746,7 +803,7 @@
                                                     <div class="icon icon-make-main"></div>
                                                 </a>
                                                 <div class="list-item active">
-                                                    Ответ эксперта
+                                                    Ответ консультанта
                                                     <div class="icon icon-experts-answer"></div>
                                                 </div>
                                             </div>
@@ -830,9 +887,6 @@
                                                     <div class="count">0</div>
                                                 </div>
                                             </div>
-                                            <div class="btn-answer answer-for-anket">
-                                                Ответить
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -851,28 +905,6 @@
                                                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                                                 commodo consequat.
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anket-form">
-                                    <div class="info-row">
-                                        <div class="left-col">
-                                            <div class="user-info">
-                                                <div class="user-icon"></div>
-                                                <div class="user-name">SubWay</div>
-                                            </div>
-                                        </div>
-                                        <div class="right-col">
-                                            <form action="#">
-                                                <div class="form-response">
-                                                    <div class="input-col">
-                                                        <textarea name="abnswer" placeholder="Ваш ответ"></textarea>
-                                                    </div>
-                                                    <div class="btn-col">
-                                                        <input class="btn-submit" type="submit" value="Отправить">
-                                                    </div>
-                                                </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -914,7 +946,7 @@
                                                     <div class="icon icon-make-main"></div>
                                                 </a>
                                                 <div class="list-item active">
-                                                    Ответ эксперта
+                                                    Ответ консультанта
                                                     <div class="icon icon-experts-answer"></div>
                                                 </div>
                                             </div>
@@ -1064,7 +1096,7 @@
                                                     <div class="icon icon-make-main"></div>
                                                 </a>
                                                 <div class="list-item active">
-                                                    Ответ эксперта
+                                                    Ответ консультанта
                                                     <div class="icon icon-experts-answer"></div>
                                                 </div>
                                             </div>
@@ -1190,11 +1222,12 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="./js/select2-krajee.min.js"></script>
     <script src="./js/image-uploader.min.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/script-companies.js"></script>
     <script src="./js/jquery.time-to.min.js"></script>
-    <script src="./js/ankets.js?90987655678"></script>
+    <script src="./js/ankets.js?6754357686543467"></script>
     <script>
         $('#reviewsearch-date').daterangepicker({
             opens: 'rigth',
@@ -1210,8 +1243,8 @@
         }, function (start, end, label) {
         });
 
-        $('.filter-wrapper .filter-select2').select2({
-
+        $('.filter-select2').select2({
+            placeholder: "Все"
         });
     </script>
 </body>

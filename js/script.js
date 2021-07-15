@@ -50,16 +50,16 @@ jQuery(function ($) {
         $('.field-filter-item').find('.help-block').after('<div class="select-caret"></div>');
 
         
-        $('select.input-sm').change(function () {
-            $("#selector-filter").submit();
+        // $('select.input-sm').change(function () {
+        //     $("#selector-filter").submit();
 
-            let attribute = $(this).data('attribute');
+        //     let attribute = $(this).data('attribute');
 
-            setTimeout(function(){
-                console.log(attribute);
-                // updateFilter(attribute);
-            }, 8000);
-        });
+        //     setTimeout(function(){
+        //         console.log(attribute);
+        //         // updateFilter(attribute);
+        //     }, 8000);
+        // });
 
         $('input#reviewsearch-date').change(function () {
             $("#selector-filter").submit()
