@@ -1,5 +1,6 @@
 // colors
-$maincolor: #AFB0AF;
+$maincolor: #0e9544;
+$hoverColor: #008963;
 $fontcolor: #505050;
 
 $backgroundpage: #F2F2F2;
@@ -272,7 +273,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                     }
                     .active {
                         a {
-                            background: #009239;
+                            background: $maincolor;
                             color: #FFFFFF;
                             font-weight: bold;
                         }
@@ -459,6 +460,32 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         padding-left: 25px;
         padding-right: 25px;
         border-bottom: 1px solid #BEBEBE;
+        .select2-container--krajee .select2-selection:focus,
+        .select2-container--krajee.select2-container--open .select2-selection {
+            background: transparent;
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+        .select2-container--krajee .select2-selection--multiple .select2-selection__choice {
+            background: transparent;
+            border: none;
+        }
+        .select2-container--krajee .select2-selection--multiple .select2-selection__choice__remove {
+            margin-top: -2px;
+        }
+        .select2-container .select2-selection--multiple .select2-selection__clear {
+            display: none;
+        }
+        .select2-selection__choice__display {
+            white-space: break-spaces;
+        }
+        .select2-selection--multiple {
+            padding-right: 20px !important;
+        }
+        .s2-select-label, .s2-unselect-label {
+            color: #333;
+        }
         .box {
             width: calc(20% - 20px);
             min-width: 210px;
@@ -542,6 +569,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                 color: #000000;
                 outline: none;
                 box-shadow: none;
+                text-overflow: ellipsis;
+                padding-right: 10px !important;
             }
             .drp-container {
                 width: 100%;
@@ -646,8 +675,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     z-index: 999;
     display: none;
     text-align: center;
+    transition: background-color 0.3s ease-in;
     .text-white {
         color: #ffffff;
+    }
+    &:hover {
+        background-color: $hoverColor;
     }
 }
 .select2-container--krajee .select2-dropdown {

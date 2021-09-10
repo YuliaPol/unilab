@@ -236,6 +236,7 @@
 .companies-table-wrapper .table-wrapper table tr th:last-child,
 .companies-table-wrapper .table-wrapper table tr td:last-child {
   padding-right: 20px;
+  min-width: 90px;
 }
 
 .companies-table-wrapper .table-wrapper table tr:last-child td {
@@ -303,7 +304,7 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  color: #009239;
+  color: #0e9544;
   text-decoration: none;
 }
 
@@ -475,7 +476,7 @@
 }
 
 .tabs-container .tabs-content-wrapper .tab-content .btn-wrapper .btn-submit {
-  background: #009239;
+  background: #0e9544;
   border: 1px solid #BEB9B9;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
@@ -662,24 +663,24 @@ ul.pagination li span {
 
 ul.pagination li a:hover,
 ul.pagination li span:hover {
-  background-color: #009239 !important;
+  background-color: #0e9544 !important;
   color: #FFFFFF !important;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 ul.pagination li.active a {
-  background-color: #009239 !important;
+  background-color: #0e9544 !important;
   color: #FFFFFF !important;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 ul.pagination .prev span {
-  border: 1px solid #009239;
+  border: 1px solid #0e9544;
   border-radius: 4px;
   padding: 6px 12px;
-  background-color: #009239;
+  background-color: #0e9544;
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -689,10 +690,10 @@ ul.pagination .prev span {
 }
 
 ul.pagination .prev a {
-  border: 1px solid #009239;
+  border: 1px solid #0e9544;
   border-radius: 4px;
   padding: 6px 12px;
-  background-color: #009239;
+  background-color: #0e9544;
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -702,10 +703,10 @@ ul.pagination .prev a {
 }
 
 ul.pagination .next span {
-  border: 1px solid #009239;
+  border: 1px solid #0e9544;
   border-radius: 4px;
   padding: 6px 12px;
-  background-color: #009239;
+  background-color: #0e9544;
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -715,10 +716,10 @@ ul.pagination .next span {
 }
 
 ul.pagination .next a {
-  border: 1px solid #009239;
+  border: 1px solid #0e9544;
   border-radius: 4px;
   padding: 6px 12px;
-  background-color: #009239;
+  background-color: #0e9544;
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -841,45 +842,6 @@ table.detail-view tr th:last-child {
   padding-right: 30px;
 }
 
-.form-wrapper {
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-}
-
-.form-wrapper .form-group label {
-  font-size: 16px;
-  padding-bottom: 5px;
-  line-height: 18px;
-}
-
-.form-wrapper .form-group .form-control {
-  max-width: 500px;
-}
-
-.btn-submit-cont {
-  padding-top: 22px;
-  padding-bottom: 17px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.btn-submit-cont p {
-  font-size: 16px;
-  line-height: 18px;
-  padding-bottom: 10px;
-}
-
-.btn-submit-cont .btn {
-  margin-right: 10px;
-}
-
-.table-info-wrapper {
-  max-width: 100%;
-  overflow-y: auto;
-}
-
 @media screen and (max-width: 1350px) {
   .tabs-container .tabs-label-wrapper .tab-label {
     font-size: 14px;
@@ -963,11 +925,6 @@ table.detail-view tr th:last-child {
   }
   table.detail-view tr td:last-child,
   table.detail-view tr th:last-child {
-    padding-right: 20px;
-  }
-  .form-wrapper,
-  .btn-submit-cont {
-    padding-left: 20px;
     padding-right: 20px;
   }
 }

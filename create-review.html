@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить отзыв</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet">
+    <link href="./css/style1.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/menu-style.css" rel="stylesheet">
+    <link href="./css/ankets.css?543" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="navbar-aside">
+                <button type="button" class="btn-aside-menu toggle-sidebar">
+                </button>
+            </div>
+            <div class="navbar-user">
+                <div class="user">
+                    <div class="user-wrapper show-user-dropdown">
+                        <div class="icon-user"></div>
+                        <div class="user-name">admin</div>
+                    </div>
+                    <div class="dropdown-user">
+                        <ul>
+                            <li>
+                                <a class="logout " href="/admin/site/logout" data-method="post"><span
+                                        class="ti-power-off pr-2"></span> Выход </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="sidebar">
+            <div class="menu-sidebar">
+                <div class="logo">
+                    <a href="/admin">
+                        <img src="./img/logo.svg" alt="Subways">
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul class="sidebar-nav treeview-menu">
+                            <li class="active">
+                                <a href="./index.html">
+                                    <i class="fa fa-star-half-o"></i>
+                                    Отзывы
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content" id="content">
+            <div class="breadcrumps">
+                <ul>
+                    <li>
+                        <a href="./index.html">
+                            <i class="fa fa-star-half-o"></i> Отзывы
+                        </a>
+                    </li>
+                    <li>
+                        / Добавить отзыв </li>
+                </ul>
+            </div>
+
+            <div class="btn-back-cont">
+                <a href="./index.html" class="btn-default">Назад</a>
+            </div>
+            <div class="main-wrapper">
+                <div class="content-wrapper">
+                    <div class="content-box">
+                        <form action="#">
+                            <div class="form-cont">
+                                 <h2 class="form-title">Добавить отзыв</h2>
+                                 <div class="input-item">
+                                    <div class="input-label">
+                                        ФИО
+                                    </div>
+                                    <input type="text" name="q-1">
+                                </div>
+                                <div class="input-item">
+                                    <div class="input-label">
+                                        Дата рождения
+                                    </div>
+                                    <input type="text" name="q-2">
+                                </div>
+                                <div class="input-item">
+                                    <div class="input-label">
+                                        Номер заказа
+                                    </div>
+                                    <input type="text" name="q-3">
+                                </div>
+                                <div class="input-item">
+                                    <div class="input-label">
+                                        Источник
+                                    </div>
+                                    <div class="select-wrapper">
+                                        <select name="q-4" class="custom-select">
+                                            <option value="Телефон">Телефон</option>
+                                            <option value="Контактный центр">Контактный центр</option>
+                                            <option value="Врач-консультант">Врач-консультант</option>
+                                            <option value="Исходящий обзвон">Исходящий обзвон</option>
+                                            <option value="Чат на сайте">Чат на сайте</option>
+                                            <option value="QR код">QR код</option>
+                                            <option value="Соц. сети">Соц. сети</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-item">
+                                    <div class="input-label">
+                                        Отзыв
+                                    </div>
+                                    <textarea name="q-5"></textarea>
+                                </div>
+                                <div class="btn-submit-cont">
+                                    <button class="btn-default">
+                                        Отправить
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    <div class="scrollup">
+        <a href="#" class="text-white"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

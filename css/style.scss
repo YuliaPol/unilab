@@ -1,5 +1,5 @@
 $fontpage: Arial, Helvetica, sans-serif;
-$maingreen: #009239;
+$maingreen: #0e9544;
 .labels-wrapper {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -191,6 +191,7 @@ $maingreen: #009239;
                 th:last-child,
                 td:last-child {
                     padding-right: 20px;
+                    min-width: 90px;
                 }
                 &:last-child {
                     td {
@@ -704,40 +705,7 @@ table.detail-view {
         }
     }
 }
-.form-wrapper {
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    .form-group {
-        label {
-            font-size: 16px;
-            padding-bottom: 5px;
-            line-height: 18px;
-        }
-        .form-control {
-            max-width: 500px;
-        }
-    }
-}
-.btn-submit-cont {
-    padding-top: 22px;
-    padding-bottom: 17px;
-    padding-left: 30px;
-    padding-right: 30px;
-    p {
-        font-size: 16px;
-        line-height: 18px;
-        padding-bottom: 10px;
-    }
-    .btn {
-        margin-right: 10px;
-    }
-}
-.table-info-wrapper {
-    max-width: 100%;
-    overflow-y: auto;
-}
+
 @media screen and (max-width: 1350px) {
     .tabs-container .tabs-label-wrapper .tab-label {
         font-size: 14px;
@@ -818,11 +786,6 @@ table.detail-view {
                 }
             }
         }
-    }
-    .form-wrapper,
-    .btn-submit-cont {
-        padding-left: 20px;
-        padding-right: 20px;
     }
 }
 @media screen and (max-width: 992px) {
