@@ -102,14 +102,33 @@ jQuery(function ($) {
         if(agreement === "true"){
             $('.for-agreement').fadeIn(0);
             $('.without-agreement').fadeOut(0);
+            $('.send-to-agreement').fadeIn(0);
+            $('.send-answer').fadeOut(0);
         } else {
             $('.for-agreement').fadeOut(0);
             $('.without-agreement').fadeIn(0);
+            $('.send-to-agreement').fadeOut(0);
         }
         if(investigation === "true"){
             $('.for-investigation').fadeIn(0)
+            
+            $('.without-investigation').fadeOut(0);
+
+            $('.send-to-investigation').fadeIn(0);
+            $('.send-answer').fadeOut(0);
         } else {
             $('.for-investigation').fadeOut(0)
+            $('.send-to-investigation').fadeOut(0);
+
+            $('.without-investigation').fadeIn(0);
+        }
+        if(agreement === "true" && investigation === "true"){
+            $('.send-to-agreement').fadeOut(0);
+            $('.send-answer').fadeOut(0);
+        }
+        if(agreement === "false" && investigation === "false"){
+            $('.send-to-agreement').fadeOut(0);
+            $('.send-answer').fadeIn(0);
         }
         $('.hidden-anket').fadeIn(300);
     });

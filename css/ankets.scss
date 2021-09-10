@@ -375,6 +375,17 @@ $hoverColor: #008963;
             width: 100%;
             max-width: 520px;
         }
+        .info-photo {
+            border: 1px solid #BEBEBE;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            img {
+                max-width: 220px;
+                max-height: 320px;
+                object-fit: contain;
+            }
+        }
     }
 }
 .ankets-container {

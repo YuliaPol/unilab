@@ -134,13 +134,30 @@
                                 </span>
                             </div>
                             <div class="work-block">
-                                <div class="btn-work-cont">
-                                    <div class="btn-default show-review-form">
-                                        Взять в работу
-                                    </div>
-                                </div>
                                 <!-- review form -->
-                                <div class="review-form hidden">
+                                <div class="review-form">
+                                    <div class="review-info">
+                                        <div class="info-item">
+                                            <div class="info-label">
+                                                Ответ регионального офиса
+                                            </div>
+                                            <div class="info-value">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam illo voluptatem quae illum reiciendis odio perferendis, recusandae exercitationem sed voluptate nemo nulla ducimus tenetur, quas culpa eaque officia. Error, ullam.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-info">
+                                        <div class="info-item">
+                                            <div class="info-label">
+                                                Скан объяснительной записки сотрудника 
+                                            </div>
+                                            <div class="info-photo">
+                                                <a href="./img/scan.png" target=”_blank” >
+                                                    <img src="./img/scan.png" alt="Scan">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <form action="#">
                                         <div class="form-cont">
                                             <div class="input-item">
@@ -158,7 +175,7 @@
                                                             value="Обработка отзыва без проведения внутреннего расследования с согласованием">
                                                             Обработка отзыва без проведения внутреннего расследования с согласованием
                                                         </option>
-                                                        <option data-agreement="true" data-investigation="true"
+                                                        <option data-agreement="true" data-investigation="true" selected
                                                             value="Обработка отзыва с внутренним расследованием с согласованием">
                                                             Обработка отзыва с внутренним расследованием с согласованием
                                                         </option>
@@ -169,90 +186,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="hidden hidden-anket">
-                                                <div class="input-item">
-                                                    <div class="input-label">
-                                                        Выберете РЦР
-                                                    </div>
-                                                    <div class="select-wrapper">
-                                                        <select name="q-30" class="custom-select select-show-hidden">
-                                                            <option value=""></option>
-                                                            <option data-hidden=".cities-1" value="Иркутский">Иркутский</option>
-                                                            <option data-hidden=".cities-2"  value="Приморский">Приморский</option>
-                                                            <option data-hidden=".cities-3"  value="Хабаровский">Хабаровский</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="hidden input-item cities-1">
-                                                    <div class="input-label">
-                                                        Выберете город
-                                                    </div>
-                                                    <div class="select-wrapper">
-                                                        <select name="q-31" class="custom-select select-show-hidden">
-                                                            <option value=""></option>
-                                                            <option value="Ангарск">Ангарск</option>
-                                                            <option value="Братск">Братск</option>
-                                                            <option value="Иркутск">Иркутск</option>
-                                                            <option value="Саянск">Саянск</option>
-                                                            <option value="Улан_Удэ">Улан_Удэ</option>
-                                                            <option value="Усть_Илимск">Усть_Илимск</option>
-                                                            <option value="Черемхово">Черемхово</option>
-                                                            <option value="Чита">Чита</option>
-                                                            <option value="Шелехов">Шелехов</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="hidden input-item cities-2">
-                                                    <div class="input-label">
-                                                        Выберете город
-                                                    </div>
-                                                    <div class="select-wrapper">
-                                                        <select name="q-32" class="custom-select select-show-hidden">
-                                                            <option value=""></option>
-                                                            <option value="Арсеньев">Арсеньев</option>
-                                                            <option value="Артем">Артем</option>
-                                                            <option value="Большой_Камень">Большой_Камень</option>
-                                                            <option value="Владивосток">Владивосток</option>
-                                                            <option value="Вольно_Надеждинское">Вольно_Надеждинское</option>
-                                                            <option value="Дальнереченск">Дальнереченск</option>
-                                                            <option value="Лесозаводск">Лесозаводск</option>
-                                                            <option value="Михайловка">Михайловка</option>
-                                                            <option value="Находка">Находка</option>
-                                                            <option value="Партизанск">Партизанск</option>
-                                                            <option value="Спасск_Дальний">Спасск_Дальний</option>
-                                                            <option value="Уссурийск">Уссурийск</option>
-                                                            <option value="Фокино">Фокино</option>
-                                                            <option value="Южно_Сахалинск">Южно_Сахалинск</option>
-                                                            <option value="Дальнегорск">Дальнегорск</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="hidden input-item cities-3">
-                                                    <div class="input-label">
-                                                        Выберете город
-                                                    </div>
-                                                    <div class="select-wrapper">
-                                                        <select name="q-33" class="custom-select select-show-hidden">
-                                                            <option value=""></option>
-                                                            <option value="Амурск">Амурск</option>
-                                                            <option value="Белогорск">Белогорск</option>
-                                                            <option value="Биробиджан">Биробиджан</option>
-                                                            <option value="Благовещенск">Благовещенск</option>
-                                                            <option value="Елизово">Елизово</option>
-                                                            <option value="Комсомольск_на_Амуре">Комсомольск_на_Амуре</option>
-                                                            <option value="Лучегорск">Лучегорск</option>
-                                                            <option value="Магадан">Магадан</option>
-                                                            <option value="Хабаровск">Хабаровск</option>
-                                                            <option value="Петропавловск_Камчатский">Петропавловск_Камчатский</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="input-item">
-                                                    <div class="input-label">
-                                                        Адрес МК
-                                                    </div>
-                                                    <input type="text" name="q-34">
-                                                </div>
+                                            <div class=" hidden-anket">
                                                 <div class="input-item">
                                                     <div class="input-label">
                                                         Выберете тональность
@@ -260,7 +194,7 @@
                                                     <div class="select-wrapper">
                                                         <select name="q-2" class="custom-select">
                                                             <option value=""></option>
-                                                            <option value="Негативная">Негативная</option>
+                                                            <option selected value="Негативная">Негативная</option>
                                                             <option value="Нейтральная">Нейтральная</option>
                                                             <option value="Позитивная">Позитивная</option>
                                                         </select>
@@ -273,7 +207,7 @@
                                                     <div class="select-wrapper">
                                                         <select name="q-2" class="custom-select select-type select-show-hidden">
                                                             <option value=""></option>
-                                                            <option data-hidden=".type-1" value="Благодарность">Благодарность</option>
+                                                            <option selected data-hidden=".type-1" value="Благодарность">Благодарность</option>
                                                             <option data-hidden=".type-2" value="Жалоба">Жалоба</option>
                                                             <option data-hidden=".type-3" value="Замечание">Замечание</option>
                                                             <option data-hidden=".type-4" value="Запрос">Запрос</option>
@@ -284,7 +218,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="hidden category type-1">
+                                                <div class="category type-1">
                                                     <div class="input-item">
                                                         <div class="input-label">
                                                             Выберете категорию
@@ -292,7 +226,7 @@
                                                         <div class="select-wrapper">
                                                             <select name="q-3" class="custom-select select-category select-show-hidden">
                                                                 <option value=""></option>
-                                                                <option data-hidden=".subcategory-4" value="Медицинский_кабинет">Медицинский_кабинет</option>
+                                                                <option selected data-hidden=".subcategory-4" value="Медицинский_кабинет">Медицинский_кабинет</option>
                                                                 <option data-hidden=".subcategory-8" value="Обслуживание">Обслуживание</option>
                                                                 <option data-hidden=".subcategory-16" value="Услуги">Услуги</option>
                                                             </select>
@@ -480,7 +414,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="hidden subcategory subcategory-4">
+                                                <div class="subcategory subcategory-4">
                                                     <!-- Медицинский_кабинет -->
                                                     <div class="input-item">
                                                         <div class="input-label">
@@ -489,7 +423,7 @@
                                                         <div class="select-wrapper">
                                                             <select name="q-12" class="custom-select select-show-hidden">
                                                                 <option value=""></option>
-                                                                <option value="Доволен_расположением">Доволен_расположением</option>
+                                                                <option selected value="Доволен_расположением">Доволен_расположением</option>
                                                                 <option value="Доволен_удобством_МК">Доволен_удобством_МК</option>
                                                             </select>
                                                         </div>
@@ -989,151 +923,149 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="hidden without-investigation">
-                                                    <div class="input-item">
-                                                        <div class="input-label">
-                                                            Допущена ли ошибка сотрудником?
-                                                        </div>
-                                                        <div class="radio-wrapper">
-                                                            <div class="answer answer-radio flex-25 show-hidden">
-                                                                <div class="radio-item">
-                                                                    <input data-hidden=".hidden-28-yes" type="radio" name="q-28" id="q-28-1" value="Да">
-                                                                    <label for="q-28-1" data-reqired="reqired">Да</label>
-                                                                </div>
-                                                                <div class="radio-item">
-                                                                    <input type="radio" name="q-28" id="q-28-2" value="Нет"
-                                                                        data-reqired="reqired">
-                                                                    <label for="q-28-2">Нет</label>
-                                                                </div>
+                                                <div class="input-item">
+                                                    <div class="input-label">
+                                                        Допущена ли ошибка сотрудником?
+                                                    </div>
+                                                    <div class="radio-wrapper">
+                                                        <div class="answer answer-radio flex-25 show-hidden">
+                                                            <div class="radio-item">
+                                                                <input data-hidden=".hidden-28-yes" type="radio" name="q-28" id="q-28-1" value="Да">
+                                                                <label for="q-28-1" data-reqired="reqired">Да</label>
+                                                            </div>
+                                                            <div class="radio-item">
+                                                                <input type="radio" name="q-28" id="q-28-2" value="Нет"
+                                                                    data-reqired="reqired">
+                                                                <label for="q-28-2">Нет</label>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="hidden hidden-28-yes">
-                                                        <div class="input-item">
-                                                            <div class="input-label">
-                                                                Должность сотрудника
-                                                            </div>
-                                                            <div class="select-wrapper">
-                                                                <select name="q-29" class="custom-select select-show-hidden">
-                                                                    <option value=""></option>
-                                                                    <option value="Регистратор">Регистратор</option>
-                                                                    <option value="Администратор-кассир">
-                                                                        Администратор-кассир
-                                                                    </option>
-                                                                    <option value="Регистратор-кассир">
-                                                                        Регистратор-кассир
-                                                                    </option>
-                                                                    <option value="Оператор контактного центра">
-                                                                        Оператор контактного центра
-                                                                    </option>
-                                                                    <option value="Врач-консультант">
-                                                                        Врач-консультант
-                                                                    </option>
-                                                                    <option value="Медсестра">Медсестра</option>
-                                                                    <option value="Администратор">
-                                                                        Администратор
-                                                                    </option>
-                                                                    <option value="Медсестра с выездом на дом">
-                                                                        Медсестра с выездом на дом
-                                                                    </option>
-                                                                    <option value="Врач очного приема">
-                                                                        Врач очного приема
-                                                                    </option>
-                                                                    <option value="Врач с выездом на дом">
-                                                                        Врач с выездом на дом
-                                                                    </option>
-                                                                    <option value="Водитель-курьер">
-                                                                        Водитель-курьер
-                                                                    </option>
-                                                                    <option value="Санитарка">
-                                                                        Санитарка
-                                                                    </option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-item">
-                                                            <div class="input-label">
-                                                                ФИО сотрудника
-                                                            </div>
-                                                            <input type="text" name="q-30">
-                                                        </div>
-                                                        <div class="input-item">
-                                                            <div class="input-label">
-                                                                Опишите ошибку
-                                                            </div>
-                                                            <textarea name="q-31"></textarea>
-                                                        </div>
-                                                    </div>
+                                                </div>
+                                                <div class="hidden hidden-28-yes">
                                                     <div class="input-item">
                                                         <div class="input-label">
-                                                            Обоснована ли претензия?
-                                                        </div>
-                                                        <div class="radio-wrapper">
-                                                            <div class="answer answer-radio flex-25">
-                                                                <div class="radio-item">
-                                                                    <input type="radio" name="q-32" id="q-32-1" value="Да">
-                                                                    <label for="q-32-1" data-reqired="reqired">Да</label>
-                                                                </div>
-                                                                <div class="radio-item">
-                                                                    <input type="radio" name="q-32" id="q-32-2" value="Нет"
-                                                                        data-reqired="reqired">
-                                                                    <label for="q-32-2">Нет</label>
-                                                                </div>
-                                                                <div class="radio-item">
-                                                                    <input type="radio" name="q-32" id="q-32-3" value="Не доказано"
-                                                                        data-reqired="reqired">
-                                                                    <label for="q-32-3">Не доказано</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="input-item">
-                                                        <div class="input-label">
-                                                            Выберете шаблон ответа клиенту
+                                                            Должность сотрудника
                                                         </div>
                                                         <div class="select-wrapper">
-                                                            <select name="q-29" class="custom-select select-answer-template">
+                                                            <select name="q-29" class="custom-select select-show-hidden">
                                                                 <option value=""></option>
-                                                                <option value="1">Шаблон 1</option>
-                                                                <option value="2">Шаблон 2</option>
-                                                                <option value="3">Шаблон 3</option>
-                                                                <option value="4">Шаблон 4</option>
-                                                                <option value="5">Шаблон 5</option>
-                                                                <option value="default">Свой вариант</option>
+                                                                <option value="Регистратор">Регистратор</option>
+                                                                <option value="Администратор-кассир">
+                                                                    Администратор-кассир
+                                                                </option>
+                                                                <option value="Регистратор-кассир">
+                                                                    Регистратор-кассир
+                                                                </option>
+                                                                <option value="Оператор контактного центра">
+                                                                    Оператор контактного центра
+                                                                </option>
+                                                                <option value="Врач-консультант">
+                                                                    Врач-консультант
+                                                                </option>
+                                                                <option value="Медсестра">Медсестра</option>
+                                                                <option value="Администратор">
+                                                                    Администратор
+                                                                </option>
+                                                                <option value="Медсестра с выездом на дом">
+                                                                    Медсестра с выездом на дом
+                                                                </option>
+                                                                <option value="Врач очного приема">
+                                                                    Врач очного приема
+                                                                </option>
+                                                                <option value="Врач с выездом на дом">
+                                                                    Врач с выездом на дом
+                                                                </option>
+                                                                <option value="Водитель-курьер">
+                                                                    Водитель-курьер
+                                                                </option>
+                                                                <option value="Санитарка">
+                                                                    Санитарка
+                                                                </option>
                                                             </select>
-                                                            <script>
-                                                                var templateArray = [
-                                                                    {
-                                                                        value: "1",
-                                                                        template: "На основании Вашего обращения нами в срочном порядке была проведена работа с персоналом всего отделения по клиенториентированности, дополнительно приняты меры дисциплинарного взыскания к сотруднику, который Вас консультировал."
-                                                                    },
-                                                                    {
-                                                                        value: "2",
-                                                                        template: "Информация передана в технический отдел, специалисты работают над устранением причин."
-                                                                    },
-                                                                    {
-                                                                        value: "3",
-                                                                        template: "Нам важно, чтобы Клиенты получали всю необходимую информацию, особенно, касающуюся получения результатов.  По данному факту будет проведена разъяснительная беседа с персоналом."
-                                                                    },
-                                                                    {
-                                                                        value: "4",
-                                                                        template: "На основании Вашего обращения мы провели работу с сотрудником, он написал объяснительную записку. Также Ваш отзыв будет учтен при его мотивации."
-                                                                    },
-                                                                    {
-                                                                        value: "5",
-                                                                        template: "На основании Вашего обращения был проведен дополнительный инструктаж медсестер по взятию биоматериала."
-                                                                    }
-                                                                ]
-                                                            </script>
                                                         </div>
                                                     </div>
-                                                    <div class="input-item hidden">
+                                                    <div class="input-item">
                                                         <div class="input-label">
-                                                            Ответ клиенту
+                                                            ФИО сотрудника
                                                         </div>
-                                                        <textarea class="answer-template" name="q-34"></textarea>
-                                                    </div> 
+                                                        <input type="text" name="q-30">
+                                                    </div>
+                                                    <div class="input-item">
+                                                        <div class="input-label">
+                                                            Опишите ошибку
+                                                        </div>
+                                                        <textarea name="q-31"></textarea>
+                                                    </div>
                                                 </div>
+                                                <div class="input-item">
+                                                    <div class="input-label">
+                                                        Обоснована ли претензия?
+                                                    </div>
+                                                    <div class="radio-wrapper">
+                                                        <div class="answer answer-radio flex-25">
+                                                            <div class="radio-item">
+                                                                <input type="radio" name="q-32" id="q-32-1" value="Да">
+                                                                <label for="q-32-1" data-reqired="reqired">Да</label>
+                                                            </div>
+                                                            <div class="radio-item">
+                                                                <input type="radio" name="q-32" id="q-32-2" value="Нет"
+                                                                    data-reqired="reqired">
+                                                                <label for="q-32-2">Нет</label>
+                                                            </div>
+                                                            <div class="radio-item">
+                                                                <input type="radio" name="q-32" id="q-32-3" value="Не доказано"
+                                                                    data-reqired="reqired">
+                                                                <label for="q-32-3">Не доказано</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="input-item">
+                                                    <div class="input-label">
+                                                        Выберете шаблон ответа клиенту
+                                                    </div>
+                                                    <div class="select-wrapper">
+                                                        <select name="q-29" class="custom-select select-answer-template">
+                                                            <option value=""></option>
+                                                            <option value="1">Шаблон 1</option>
+                                                            <option value="2">Шаблон 2</option>
+                                                            <option value="3">Шаблон 3</option>
+                                                            <option value="4">Шаблон 4</option>
+                                                            <option value="5">Шаблон 5</option>
+                                                            <option value="default">Свой вариант</option>
+                                                        </select>
+                                                        <script>
+                                                            var templateArray = [
+                                                                {
+                                                                    value: "1",
+                                                                    template: "На основании Вашего обращения нами в срочном порядке была проведена работа с персоналом всего отделения по клиенториентированности, дополнительно приняты меры дисциплинарного взыскания к сотруднику, который Вас консультировал."
+                                                                },
+                                                                {
+                                                                    value: "2",
+                                                                    template: "Информация передана в технический отдел, специалисты работают над устранением причин."
+                                                                },
+                                                                {
+                                                                    value: "3",
+                                                                    template: "Нам важно, чтобы Клиенты получали всю необходимую информацию, особенно, касающуюся получения результатов.  По данному факту будет проведена разъяснительная беседа с персоналом."
+                                                                },
+                                                                {
+                                                                    value: "4",
+                                                                    template: "На основании Вашего обращения мы провели работу с сотрудником, он написал объяснительную записку. Также Ваш отзыв будет учтен при его мотивации."
+                                                                },
+                                                                {
+                                                                    value: "5",
+                                                                    template: "На основании Вашего обращения был проведен дополнительный инструктаж медсестер по взятию биоматериала."
+                                                                }
+                                                            ]
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div class="hidden input-item">
+                                                    <div class="input-label">
+                                                        Ответ клиенту
+                                                    </div>
+                                                    <textarea class="answer-template" name="q-34"></textarea>
+                                                </div> 
                                                 <div class="input-item hidden for-investigation">
                                                     <div class="input-label">
                                                         Отправить запрос в региональный офис для расследования
@@ -1152,19 +1084,19 @@
                                                     </div>
                                                 </div> 
                                             </div>
-                                            <div class="hidden send-to-agreement">
+                                            <div class="for-agreement">
                                                 <div class="btn-submit-cont">
-                                                    <a href="./view_with_answer.html" class="btn-default">
+                                                    <button class="btn-default">
                                                         Отправить на согласование
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div class="hidden send-to-investigation">
-                                                <a href="./view_with_answer_invest.html" class="btn-default">
+                                            <div class="hidden for-investigation">
+                                                <a class="btn-default">
                                                     Отправить на расследование
                                                 </a>
                                             </div>
-                                            <div class="hidden send-answer">
+                                            <div class="hidden without-agreement">
                                                 <div class="btn-submit-cont">
                                                     <button class="btn-default">
                                                         Отправить

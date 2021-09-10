@@ -500,6 +500,20 @@
   max-width: 520px;
 }
 
+.review-info .info-item .info-photo {
+  border: 1px solid #BEBEBE;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.review-info .info-item .info-photo img {
+  max-width: 220px;
+  max-height: 320px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .ankets-container {
   background: #FFFFFF;
   border: 1px solid #D6D4D4;
