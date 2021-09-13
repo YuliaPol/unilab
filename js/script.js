@@ -136,6 +136,9 @@ jQuery(function ($) {
         $(this).parents('.btn-work-cont').fadeOut(0);
         $('.review-form').fadeIn(300);
     });
+    $('.select-type').change(function(e){
+        $('.category').fadeIn(300);
+    });
     $('.content').on('change', '.select-show-hidden', function(e){
         if($(this).hasClass('select-type')){
             $('.category').fadeOut(0);
