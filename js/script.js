@@ -143,21 +143,21 @@ jQuery(function ($) {
         if($(this).hasClass('select-type')){
             $('.category').fadeOut(0);
             $('.subcategory').fadeOut(0);
-            $($(this).find('option:checked').attr('data-hidden')).fadeIn(300);
+            $($(this).find('option:checked').attr('data-hidden')).fadeIn(0);
         } else if($(this).hasClass('select-category')) {
             $('.subcategory').fadeOut(0);
-            $($(this).find('option:checked').attr('data-hidden')).fadeIn(300);
+            $($(this).find('option:checked').attr('data-hidden')).fadeIn(0);
         } else {
             let options = $(this).find('option');
             let selected = $(this).find('option:selected');
             for (let i = 0; i < options.length; i++) {
                 if($(options[i]).attr('data-hidden')){
                     if($(options[i]).is(':checked')){
-                        $($(options[i]).attr('data-hidden')).fadeIn(300);   
+                        $($(options[i]).attr('data-hidden')).fadeIn(0);   
                     }
                     else {
                         if($(selected).attr('data-hidden') !== $(options[i]).attr('data-hidden')){
-                            $($(options[i]).attr('data-hidden')).fadeOut(300);
+                            $($(options[i]).attr('data-hidden')).fadeOut(0);
                         }
                     }
                 }
