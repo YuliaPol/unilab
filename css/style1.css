@@ -645,7 +645,6 @@ body .main-wrapper .content-wrapper .chart-three-points-section .range-three-poi
       -ms-flex-align: baseline;
           align-items: baseline;
   max-width: 100%;
-  overflow: hidden;
 }
 
 body .main-wrapper .content-wrapper .chart-three-points-section .range-three-points-wrapper .main-data-wrapper .main-data .point-item-wrapper .item-name {
@@ -877,6 +876,10 @@ body .main-wrapper .content-wrapper .client-website-chart-section .website-chart
 
 body .main-wrapper .content-wrapper .client-website-chart-section .website-chart-data-wrapper .main-data-wrapper .main-data {
   width: 86%;
+}
+
+body .main-wrapper .content-wrapper .client-website-chart-section .website-chart-data-wrapper .main-data-wrapper .main-data .website-source-item {
+  padding-bottom: 20px;
 }
 
 body .main-wrapper .content-wrapper .client-website-chart-section .website-chart-data-wrapper .main-data-wrapper .main-data .point-item-wrapper {
@@ -1645,6 +1648,18 @@ body .main-wrapper .content-wrapper .two-charts-container .chart-wrapper .chart-
 
 body .main-wrapper .content-wrapper .two-charts-container .chart-wrapper .chart-flex-box .pie-legend .legend-list .color8::before {
   background: #C6B7E8;
+}
+
+body .main-wrapper .content-wrapper .two-charts-container .chart-wrapper .chart-flex-box .pie-legend .legend-list .color9::before {
+  background: #62c15b;
+}
+
+body .main-wrapper .content-wrapper .two-charts-container .chart-wrapper .chart-flex-box .pie-legend .legend-list .color10::before {
+  background: #dc73b7;
+}
+
+body .main-wrapper .content-wrapper .two-charts-container .chart-wrapper .chart-flex-box .pie-legend .legend-list .color11::before {
+  background: #599cc3;
 }
 
 body .main-wrapper .info-wrapper {

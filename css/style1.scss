@@ -445,7 +445,7 @@ body {
                             display: flex;
                             align-items: baseline;
                             max-width: 100%;
-                            overflow: hidden;
+                            // overflow: hidden;
                             .item-name{
                               font-family: Arial;
                               font-style: normal;
@@ -618,6 +618,9 @@ body {
                           justify-content: space-between;
                           .main-data{
                               width: 86%;
+                              .website-source-item {
+                                padding-bottom: 20px;
+                              }
                             .point-item-wrapper{
                                 min-width: 250px;
                                 display: flex;
@@ -1157,6 +1160,15 @@ body {
                                 }
                                 .color8::before{
                                     background: #C6B7E8;
+                                }
+                                .color9::before{
+                                    background: #62c15b;
+                                }
+                                .color10::before{
+                                    background: #dc73b7;
+                                }
+                                .color11::before{
+                                    background: #599cc3;
                                 }
                             }
                         }
