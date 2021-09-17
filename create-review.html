@@ -8,6 +8,7 @@
     <title>Добавить отзыв</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet">
+    <link href="./css/datepicker.min.css" rel="stylesheet">
     <link href="./css/style1.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/menu-style.css" rel="stylesheet">
@@ -86,7 +87,7 @@
             <div class="main-wrapper">
                 <div class="content-wrapper">
                     <div class="content-box">
-                        <form action="#">
+                        <form action="#" autocomplete="off">
                             <div class="form-cont">
                                  <h2 class="form-title">Добавить отзыв</h2>
                                  <div class="input-item">
@@ -99,20 +100,35 @@
                                     <div class="input-label">
                                         Дата рождения
                                     </div>
-                                    <input type="text" name="q-2">
+                                    <input class="date-input" type="text" name="q-2">
                                 </div>
                                 <div class="input-item">
                                     <div class="input-label">
                                         Номер заказа
                                     </div>
-                                    <input type="text" name="q-3">
+                                    <input class="only-number" type="text" name="q-3">
+                                    <div class="text-error">
+                                        Минимум 11 цифр
+                                    </div>
+                                </div>
+                                <div class="input-item">
+                                    <div class="input-label">
+                                        Телефон
+                                    </div>
+                                    <input class="phone-input" type="tel" name="q-4">
+                                </div>
+                                <div class="input-item">
+                                    <div class="input-label">
+                                        E-mail
+                                    </div>
+                                    <input class="email-input" type="email" name="q-5">
                                 </div>
                                 <div class="input-item">
                                     <div class="input-label">
                                         Источник
                                     </div>
                                     <div class="select-wrapper">
-                                        <select name="q-4" class="custom-select">
+                                        <select name="q-6" class="custom-select select-show-hidden">
                                             <option value="Телефон">Телефон</option>
                                             <option value="Контактный центр">Контактный центр</option>
                                             <option value="Врач-консультант">Врач-консультант</option>
@@ -120,17 +136,43 @@
                                             <option value="Чат на сайте">Чат на сайте</option>
                                             <option value="QR код">QR код</option>
                                             <option value="Соц. сети">Соц. сети</option>
+                                            <option data-hidden=".q-6-other" value="Прочее">Прочее</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="hidden q-6-other">
+                                    <div class="input-item">
+                                        <div class="input-label">
+                                            Ваш источник
+                                        </div>
+                                        <input type="text" name="q-7">
                                     </div>
                                 </div>
                                 <div class="input-item">
                                     <div class="input-label">
                                         Отзыв
                                     </div>
-                                    <textarea name="q-5"></textarea>
+                                    <textarea name="q-8"></textarea>
+                                </div>
+                                <div class="input-item">
+                                    <div class="input-label">
+                                        Нужна ли обратная связь
+                                    </div>
+                                    <div class="radio-wrapper">
+                                        <div class="answer answer-radio flex-25">
+                                            <div class="radio-item">
+                                                <input type="radio" name="q-9" id="q-9-1" value="Да">
+                                                <label for="q-9-1">Да</label>
+                                            </div>
+                                            <div class="radio-item">
+                                                <input type="radio" name="q-9" id="q-9-2" value="Нет">
+                                                <label for="q-9-2">Нет</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="btn-submit-cont">
-                                    <button class="btn-default">
+                                    <button class="btn-default btn-submit">
                                         Отправить
                                     </button>
                                 </div>
@@ -149,6 +191,9 @@
         <a href="#" class="text-white"><i class="fa fa-chevron-up"></i></a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="./js/datepicker.min.js"></script>
+    <script src="./js/datepicker.ru-RU.js"></script>
+    <script src="./js/jquery.inputmask.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 

@@ -1148,6 +1148,10 @@ $hoverColor: #008963;
     &:hover {
         background-color: $hoverColor;
     }
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
 }
 .btn-invert {
     padding: 10px 15px;
@@ -1182,13 +1186,30 @@ form {
     .form-cont {
         .input-item {
             padding-bottom: 15px;
+            &.has-error {
+                .input-label {
+                    color: red;
+                }
+                input[type=text] {
+                    box-shadow: 5px 5px 5px rgba(223, 27, 27, 0.3);
+                }
+            }
             .input-label {
                 padding-bottom: 10px;
                 font-size: 14px;
                 line-height: 16px;
                 color: #000000;
             }
-            input[type=text] {
+            .text-error {
+                padding-top: 5px;
+                color: red;
+                font-size: 14px;
+                line-height: 16px;
+                display: none;
+            }
+            input[type=text],
+            input[type=tel],
+            input[type=email] {
                 border: 1px solid #BEBEBE;
                 border-radius: 5px;
                 font-style: normal;
@@ -1306,6 +1327,13 @@ form {
         justify-content: flex-start;
         & > div {
             width: 25%;
+        }
+    }
+}
+.datepicker-panel>ul {
+    &:nth-child(1){
+       &>li {
+            padding-top: 10px;
         }
     }
 }

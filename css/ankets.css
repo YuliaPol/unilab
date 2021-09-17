@@ -1502,6 +1502,11 @@
   background-color: #008963;
 }
 
+.btn-default:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .btn-invert {
   padding: 10px 15px;
   border-radius: 5px;
@@ -1541,6 +1546,15 @@ form .form-cont .input-item {
   padding-bottom: 15px;
 }
 
+form .form-cont .input-item.has-error .input-label {
+  color: red;
+}
+
+form .form-cont .input-item.has-error input[type=text] {
+  -webkit-box-shadow: 5px 5px 5px rgba(223, 27, 27, 0.3);
+          box-shadow: 5px 5px 5px rgba(223, 27, 27, 0.3);
+}
+
 form .form-cont .input-item .input-label {
   padding-bottom: 10px;
   font-size: 14px;
@@ -1548,7 +1562,17 @@ form .form-cont .input-item .input-label {
   color: #000000;
 }
 
-form .form-cont .input-item input[type=text] {
+form .form-cont .input-item .text-error {
+  padding-top: 5px;
+  color: red;
+  font-size: 14px;
+  line-height: 16px;
+  display: none;
+}
+
+form .form-cont .input-item input[type=text],
+form .form-cont .input-item input[type=tel],
+form .form-cont .input-item input[type=email] {
   border: 1px solid #BEBEBE;
   border-radius: 5px;
   font-style: normal;
@@ -1562,7 +1586,9 @@ form .form-cont .input-item input[type=text] {
   max-width: 520px;
 }
 
-form .form-cont .input-item input[type=text]:focus {
+form .form-cont .input-item input[type=text]:focus,
+form .form-cont .input-item input[type=tel]:focus,
+form .form-cont .input-item input[type=email]:focus {
   border-color: #0e9544;
 }
 
@@ -1706,6 +1732,10 @@ form .form-cont .btn-submit-cont {
 
 .radio-wrapper .flex-25 > div {
   width: 25%;
+}
+
+.datepicker-panel > ul:nth-child(1) > li {
+  padding-top: 10px;
 }
 
 .hidden {

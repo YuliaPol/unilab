@@ -166,4 +166,36 @@ jQuery(function ($) {
         
     });
 
+    //mask for date
+
+    $('.date-input').inputmask({
+        alias: "datetime",
+        inputFormat: "dd.mm.yyyy",
+        placeholder: "00.00.0000"
+    });
+    //input with calendar
+    $('.date-input').datepicker({
+        language: 'ru-RU',
+        autoClose: true,
+        autoHide: true,
+    });
+    $('.only-number').inputmask('99999999999');
+    $('.only-number').focusout(function(e){
+        if($(this).val().replace('_','').length < 11){
+            $(this).parents('.input-item').find('.text-error').fadeIn(300);
+            $(this).parents('.input-item').addClass('has-error');
+            $(this).parents('form').find('.btn-submit').prop('disabled', true);
+        } else {
+            $(this).parents('.input-item').find('.text-error').fadeOut(300);
+            $(this).parents('.input-item').removeClass('has-error');
+            $(this).parents('form').find('.btn-submit').prop('disabled', false);
+        }
+    });
+    $('.only-number').focus(function(e){
+        $(this).parents('.input-item').find('.text-error').fadeOut(300);
+        $(this).parents('.input-item').removeClass('has-error')
+    });
+    //mask for phone
+    $('.phone-input').inputmask("99-9999999");
+    Inputmask("email").mask('.email-input');
 });
